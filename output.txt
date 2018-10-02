@@ -1,0 +1,10 @@
+runfile('C:/Users/natha/Documents/BMI665/BMI665/evans_hw1.py', wdir='C:/Users/natha/Documents/BMI665/BMI665')
+Temperature F, C [45, 7.222222222222222]
+
+How many times shall we roll the dice? 10
+<class 'int'>
+our list of rolls:  [1, 6, 1, 4, 4, 4, 1, 5, 5, 2]
+
+How many times shall we roll the dice? 10
+dice rolls in list:  [6, 5, 1, 2, 5, 4, 2, 6, 3, 4]
+Index positions of all Ts in seq (First few kbs: ATCGAATT):  [1, 6, 7]

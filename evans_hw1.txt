@@ -1,0 +1,38 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Thu Sep 27 10:56:12 2018
+
+@author: nathaniel evans
+BMI665: Scripting 
+Homework # 1
+"""
+
+'''
+Assignment #1
+Submit source code and write-up (including program output) through Sakai.
+BMI 565/665 Bioinformatics Programming and Scripting
+Work through the “Getting Started” tutorial available on Sakai.
+Install Python (preferably Anaconda), and download/clone the Github repo with class materials (1 point)
+Chapter 2:
+1) What is a comment in source code? Give two reasons for using comments. (2 point)
+'''
+    # comments are used to document your code, they explain what your functions do and why, briefly. 
+    # Two reasons to document your code are 1) to make it readable by other programmers and 2) to 
+    # remind yourself what you were trying to accomplish and how. 
+
+'''
+2) What is a “shebang” or “hashbang”? (1 point)
+    '''
+    # shebang is a character sequence ( #! ) at the begginning of a unix (usually) script that specifies
+    # the interpreter that should be used to run the remaining file as an executable. The shebang is 
+    # followed by the path to your interpreter eg. usr/bin/python 
+    
+'''    
+Chapter 3: Data types
+3) What is a python dictionary? Describe in two sentences. (2 points)
+    '''
+    # a python dictionary is an object that maps an key to a value. The key can be any immutable 
+    # object and the value can any object. Implementation can be done as follows: 
+    # dict_obj = {'key':['value','object',123]}
+
+
