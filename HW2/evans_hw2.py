@@ -29,23 +29,24 @@ Save Results
 Use the cPickle Python module to save the resulting dictionary to a file in a directory called results
 (note: you’ll have to create this directory beforehand).
 '''
+import pickle
 
 wine_paths = ["white_wine_good.csv", "white_wine_poor.csv", "red_wine_good.csv", "red_wine_poor.csv"]
 
-def make_dict(file_names): 
+def find_avg_wines(file_names): 
     
     fd = {}
     for fn in file_names: 
         with open("./data/" + fn, 'r') as f:
             nm = fn[0:-4]
-            print(nm)
-            fd[nm] = {"Citric acid":0,"Chlorides":0,"pH":0,"Alcohol":0}
-            header = ["Citric acid","Chlorides","pH","Alcohol"]# If I fix awk to keep header row then include: #f.readline().split(',')
+            fd[nm] = {}
+            header = f.readline().replace('\"', '').split(',')[0:-1]
+            for head in header: 
+                fd[nm][head] = 0
             
             n = 0
             for line in f.readlines(): 
                 spl_line = line.strip('\n').split(',')
-                print(spl_line)
                 for i, val in enumerate(spl_line): 
                     if (i<4):
                         fd[nm][header[i]] +=  float(val)
@@ -53,10 +54,12 @@ def make_dict(file_names):
             for key in fd[nm]: 
                 fd[nm][key] /= n
                     
-    print(fd)
+    return fd
                     
-                
+            
         
-make_dict(wine_paths)
-    
+avg_values = find_avg_wines(wine_paths)
+
+with open("./results/avg_wine_dict.pkl", 'wb') as fb: 
+    pickle.dump(avg_values, fb)
     
