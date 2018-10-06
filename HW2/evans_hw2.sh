@@ -27,5 +27,5 @@ awk 'BEGIN{FS=",";OFS=","} ; NR==1{print $3,$5,$9,$11,$12} ; NR>1{if ($12 < 5) p
 
 mkdir -p results 
 
-python evans_hw2.py 
+python evans_analyze_wine.py
  
