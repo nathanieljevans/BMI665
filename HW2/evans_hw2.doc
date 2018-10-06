@@ -1,0 +1,47 @@
+Nathaniel Evans 
+BMI665
+Michael Mooney, PhD 
+Oct. 6 2018
+HW # 2 Write-up 
+
+
+This homework assignment requires internet connection, python3 and a bash terminal to run properly. 
+
+To run this hw’s scripts, first navigate in a bash terminal to the directory containing “evans_hw2.sh” and “evans_analyze_wine.py” and execute the following command: 
+
+$./evans_hw2.sh
+
+The execution of this script will produce 3 directories with the following file structure: 
+- download
+o winequality_red.csv
+o winequality_white.csv
+- data
+o wq_red.csv 
+o wq_white.csv
+o red_wine_good.csv
+o red_wine_poor.csv
+o white_wine_good.csv
+o white_wine_poor.csv
+- results 
+o avg_wine_dict.pkl 
+
+The pickled file saved in results has the structure: 
+
+Top_level_dictionary
+       keys: “red_wine_good”, “red_wine_poor”, 
+       “white_wine_good”, “white_wine_poor” 
+       
+==> inner_dictionary
+   keys: “chlorides”, “pH”, “alcohol”, “citric acid”
+		
+		>>> average value
+
+Relevant data can be accessed via python (once loaded back into memory) by:
+
+avg_chloride_good_red_wine = avg_wine_dict[“red_wine_good”][“chlorides”]
+
+The bash script that was used to produce these results followed the general workflow: 
+==> download data from remote repository 
+==> format data 
+==> select relevant data components 
+==> process data (via python) and produce .pkl file with results 
