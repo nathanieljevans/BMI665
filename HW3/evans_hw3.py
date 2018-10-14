@@ -66,22 +66,23 @@ if __name__ == '__main__' :
     for protein in root : 
         try: 
             name = prot_tag = protein.find(namespace+"protein").find(namespace+"recommendedName").find(namespace+"fullName").text
+            data[name] = {}
+
+            data[name]["GO_IDS"] = full_search(protein, att="[@type='GO']") 
+    
+            data[name]["term_elements"] = full_search(protein, att="[@type='term']")
+            
+            print(data[name].keys())
+            data[name]["ids"] = []
+            for GO in data[name]["GO_IDS"] : 
+                data[name]["ids"].append(GO.get('id'))
+            
+            data[name]['term'] = []
+            for t in data[name]["term_elements"]: 
+                data[name]['term'].append( t.get('value') ) 
+                
         except: 
             print('failed to parse: ' + str(protein))
-
-        data[name] = {"GO_IDS" : full_search(protein, att="[@type='GO']") } 
-        print(data[name]["GO_IDS"])
-        data[name] = {"term_elements" : full_search(protein, att="[@type='term']")}
-
-        data[name]["ids"] = []
-        for GO in data[name]["GO_IDS"] : 
-            data[name]["ids"].append(GO.get('id'))
-            
-        data[name]['term'] = []
-        for t in data[name]["term_elements"]: 
-            data[name]['term'].append( t.get('value') ) 
-            
-        
             
     
     print (data)
