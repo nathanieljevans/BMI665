@@ -1,0 +1,62 @@
+GO id	term
+GO:0016324	C:apical plasma membrane
+GO:0016323	C:basolateral plasma membrane
+GO:0005829	C:cytosol
+GO:0010008	C:endosome membrane
+GO:0016021	C:integral component of membrane
+GO:0043209	C:myelin sheath
+GO:0005634	C:nucleus
+GO:0048471	C:perinuclear region of cytoplasm
+GO:0005886	C:plasma membrane
+GO:0043235	C:receptor complex
+GO:0005524	F:ATP binding
+GO:0043125	F:ErbB-3 class receptor binding
+GO:0042802	F:identical protein binding
+GO:0046934	F:phosphatidylinositol-4,5-bisphosphate 3-kinase activity
+GO:0008022	F:protein C-terminus binding
+GO:0046983	F:protein dimerization activity
+GO:0046982	F:protein heterodimerization activity
+GO:0019903	F:protein phosphatase binding
+GO:0004713	F:protein tyrosine kinase activity
+GO:0005088	F:Ras guanyl-nucleotide exchange factor activity
+GO:0001042	F:RNA polymerase I core binding
+GO:0004714	F:transmembrane receptor protein tyrosine kinase activity
+GO:0004888	F:transmembrane signaling receptor activity
+GO:0008283	P:cell proliferation
+GO:0007166	P:cell surface receptor signaling pathway
+GO:0071364	P:cellular response to epidermal growth factor stimulus
+GO:0071363	P:cellular response to growth factor stimulus
+GO:0007167	P:enzyme linked receptor protein signaling pathway
+GO:0038128	P:ERBB2 signaling pathway
+GO:0007507	P:heart development
+GO:0000165	P:MAPK cascade
+GO:0008045	P:motor neuron axon guidance
+GO:0042552	P:myelination
+GO:1901185	P:negative regulation of ERBB signaling pathway
+GO:0033088	P:negative regulation of immature T cell proliferation in thymus
+GO:0007528	P:neuromuscular junction development
+GO:0048709	P:oligodendrocyte differentiation
+GO:0007422	P:peripheral nervous system development
+GO:0014065	P:phosphatidylinositol 3-kinase signaling
+GO:0045785	P:positive regulation of cell adhesion
+GO:0030307	P:positive regulation of cell growth
+GO:0050679	P:positive regulation of epithelial cell proliferation
+GO:0043547	P:positive regulation of GTPase activity
+GO:0043406	P:positive regulation of MAP kinase activity
+GO:0051897	P:positive regulation of protein kinase B signaling
+GO:0001934	P:positive regulation of protein phosphorylation
+GO:0090314	P:positive regulation of protein targeting to membrane
+GO:0045943	P:positive regulation of transcription by RNA polymerase I
+GO:0045945	P:positive regulation of transcription by RNA polymerase III
+GO:0045727	P:positive regulation of translation
+GO:0046777	P:protein autophosphorylation
+GO:0006468	P:protein phosphorylation
+GO:0045765	P:regulation of angiogenesis
+GO:2000145	P:regulation of cell motility
+GO:0070372	P:regulation of ERK1 and ERK2 cascade
+GO:0032886	P:regulation of microtubule-based process
+GO:0006357	P:regulation of transcription by RNA polymerase II
+GO:0007165	P:signal transduction
+GO:0006351	P:transcription, DNA-templated
+GO:0007169	P:transmembrane receptor protein tyrosine kinase signaling pathway
+GO:0042060	P:wound healing

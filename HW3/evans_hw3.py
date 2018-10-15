@@ -27,11 +27,6 @@ import os
 import re
 
 
-
-
-
-
-
 def full_search(root, att = ''):
     '''
     Search through all tree branches and only return nodes with given attribute (att) search paramaters. Use Xpath search notation. branch search ends when parameter is found 
@@ -47,12 +42,7 @@ def full_search(root, att = ''):
             ls += l
     return ls
         
-
-    
-
-
-if __name__ == '__main__' :  
-    
+def parse_xml(): 
     fs = os.listdir('./data')
     f = './data/' + fs[0]
     
@@ -60,30 +50,52 @@ if __name__ == '__main__' :
     root = tree.getroot()
     
     namespace = re.match(r"{.*}", root.tag).group()
-    print(namespace)
     
     data = dict()
     for protein in root : 
         try: 
-            name = prot_tag = protein.find(namespace+"protein").find(namespace+"recommendedName").find(namespace+"fullName").text
+            name =  protein.find(namespace+"protein").find(namespace+"recommendedName").find(namespace+"fullName").text
             data[name] = {}
 
             data[name]["GO_IDS"] = full_search(protein, att="[@type='GO']") 
     
             data[name]["term_elements"] = full_search(protein, att="[@type='term']")
             
-            print(data[name].keys())
-            data[name]["ids"] = []
-            for GO in data[name]["GO_IDS"] : 
-                data[name]["ids"].append(GO.get('id'))
+            data[name]["ids"] = {}
+            for GO in data[name]["GO_IDS"] :
+                data[name]["ids"][(GO.get('id'))] = GO[0].get("value")
             
-            data[name]['term'] = []
-            for t in data[name]["term_elements"]: 
-                data[name]['term'].append( t.get('value') ) 
-                
         except: 
             print('failed to parse: ' + str(protein))
             
+    return data
+
+# all wrong
+def write_full_table(data): 
     
-    print (data)
+    for prot_key in data: 
+        
+        with open('./data/' + prot_key + '.csv','w') as f: 
+            #header 
+            f.write("GO id\tterm\n")
+            
+            for _id in data[prot_key]["ids"]: 
+                f.write(_id + '\t' + data[prot_key]["ids"][_id] + '\n')
+                
+
+            
+            
+            
+            
+                
+    
+
+
+if __name__ == '__main__' :  
+    
+    data = parse_xml() 
+    
+    write_full_table(data)
+    
+    
 
