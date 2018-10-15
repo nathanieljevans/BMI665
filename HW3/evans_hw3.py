@@ -43,8 +43,9 @@ def full_search(root, att = ''):
     return ls
         
 def parse_xml(): 
-    fs = os.listdir('./data')
-    f = './data/' + fs[0]
+    fs = os.listdir('./data/xml/')
+    f = './data/xml/' + fs[0]
+    assert f[-4:] == '.xml', "trying to parse a non- xml file" 
     
     tree = ET.parse(f)
     root = tree.getroot()
@@ -70,22 +71,46 @@ def parse_xml():
             
     return data
 
-# all wrong
-def write_full_table(data): 
-    
-    for prot_key in data: 
-        
-        with open('./data/' + prot_key + '.csv','w') as f: 
-            #header 
-            f.write("GO id\tterm\n")
-            
-            for _id in data[prot_key]["ids"]: 
-                f.write(_id + '\t' + data[prot_key]["ids"][_id] + '\n')
-                
 
+def analyze_ids(data): 
+    
+    all_ids = dict()
+    # indice (i) represent set of ids shared among at least i+2 proteins 
+    shared_id = [set()]*3
+    for prot in data: 
+        for goid in data[prot]["ids"]:
+            term = data[prot]["ids"][goid]
             
+            if goid not in all_ids.keys(): 
+                all_ids[goid] = {'name': {prot}, 'term':term} 
+            else: 
+                all_ids[goid]['name'].add(prot)
+                # add the id to shared membership group, so all ids in 2 are in 1 , 3 in 2... 
+                #print(all_ids[goid]['name'])
+                #print(len(all_ids[goid]['name']))
+                shared_id[len(all_ids[goid]['name'])-2].add(goid)
+
+    return (all_ids, shared_id)
+    
+
+def write_table(data, ids, identity_col=False, name=''):
+    
+    with open('./data/common_ids-' + name + '.csv','w') as f: 
+        f.write('GO ID\tGO term')
+        if(identity_col): 
+            f.write('\tProtein Names\n')
+        else: 
+            f.write('\n')
             
-            
+        for goid in ids: 
+            proteins = ','.join( data[goid]['name'] ) 
+            term = data[goid]['term']
+            f.write(goid + '\t' + term)
+            if (identity_col): 
+                f.write('\t' + proteins + '\n')
+            else: 
+                f.write('\n')
+                     
             
                 
     
@@ -93,9 +118,18 @@ def write_full_table(data):
 
 if __name__ == '__main__' :  
     
+    # read data into dictionary with relevant parts 
     data = parse_xml() 
     
-    write_full_table(data)
+    # restructuring data and pre-computing shared ids
+    goids, shared_ids = analyze_ids(data)
+    
+    # make table with common ids in all 4 proteins 
+    write_table(goids, shared_ids[2], name='commontoall')
+    
+    # make table with common ids in at least 2 proteins 
+    write_table(goids, shared_ids[0], name='commonto2proteins', identity_col=True)
+    
     
     
 
