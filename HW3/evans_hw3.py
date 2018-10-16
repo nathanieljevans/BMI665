@@ -2,40 +2,34 @@
 """
 Created on Sun Oct 14 10:27:05 2018
 
-@author: natha
+@author: nathaniel evans
 @class: bmi665
-#HW:3
+@HW:3
+
+The instructions that prompted this script can be found at: 
+    https://sakai.ohsu.edu/access/content/group/BMI-565-665-DL-F18/Week%203/BMI565_assignment3.pdf
+    
+    To run this script, it is necessary to have your desired xml file a relative path location: 
+        /data/xml/
+        
+    The xml file in question should contain all the data that you wish to analyze, multiple xml files will result in only the first being analyzed. To combine your data into a single xml: 
+        navigate to uniprot.org 
+        search for relevant/desired proteins 
+        click 'add to cart' 
+            once all desired proteins are in the cart 
+        click 'cart' 
+        download all the files as an uncompressed xml to the relative (to this script) directory: 
+                /data/xml/
+                
+        This script can then be run from command line by navigating to script folder location and using the command: 
+            $python evans_hw3.py
+            
+        No additional arugments are required. 
+        Output csv (tab delimited) files will be located in /data/ 
+        Protein pattern matching will be written to the console. 
+            This can be saved to a text file by adding command: 
+                $python evans_hw3.py >> your_file.txt
 """
-
-'''
-XML and Python:
-1) Download four UniProt (www.uniprot.org) XML files for the human proteins: ERBB1, ERBB2, ERBB3,
-ERBB4
-2) Write a Python program to extract Gene Ontology (GO) ID’s (e.g. “GO:0005524”) and term (e.g. “ATP
-binding”) from each UniProt file using the ElementTree module. (6 points)
-3) Write a function to create and write a table (tab delimited file) containing GO ID’s and terms in
-common across all 4 proteins. The output file should have two columns, one for GO IDs and one for
-GO terms. (2 points)
-4) Write a function to create and write a table (tab delimited file) containing GO ID’s and terms in
-common across at least 2 proteins. Make sure to include an additional column specifying the
-associated proteins. The output file should have three columns: Protein names, GO ID, and GO term
-(4 points).
-
-Regular Expressions:
-5) Write a Python program to extract the protein sequence from each protein's XML file (you may have
-to remove spaces, newline characters, etc.). (4 points)
-6) Translate the following PROSITE patterns into regular expressions, and write a function to search
-each protein sequence for these sites. If matches are found, print out the matching sequence and
-the location of each match to the screen. (4 points)
-PROSITE Patterns:
-Tyrosine protein kinases specific active-site signature (PS00109):
-[LIVMFYC]-{A}-[HY]-x-D-[LIVMFY]-[RSTAC]-{D}-{PF}-N-[LIVMFYC](3)
-Tyrosine kinase phosphorylation site (PS00007):
-[RK]-x(2)-[DE]-x(3)-Y or [RK]-x(3)-[DE]-x(2)-Y
-http://prosite.expasy.org/scanprosite/scanprosite_doc.html
-
-
-'''
 
 import xml.etree.ElementTree as ET
 import os
@@ -44,20 +38,47 @@ import re
 
 def full_search(root, att = ''):
     '''
-    Search through all tree branches and only return nodes with given attribute (att) search paramaters. Use Xpath search notation. branch search ends when parameter is found 
+    Search through all tree branches and only return nodes with given attribute (att)                   search paramaters. Use Xpath search notation. branch search ends when parameter is found 
+    
+    Args:
+      root - ElementTree object denoting the root of the xml represented tree
+      att (str) - the string to be searched for in branches
+    Returns:
+        ls [list of ElementTree objects] - all occurences that match the given pattern att
     '''
+    
     found = root.findall(att)
     if found: 
         return found
     ls = []
     for child in root: 
-        # error when root is end branch? 
         l = full_search(child, att)
         if (l): # only add if non empty
             ls += l
     return ls
         
 def parse_xml(): 
+    '''
+    This function reads in the xml file, searches for the required data and stores it in a dictionary such that: 
+            data {}
+                key=protein_names -> 
+                    dict {}
+                        keys={"GO_IDS -> element tree objects for go ids
+                              "term_elements" -> element tree objects for terms
+                              "ids" ->
+                                  dict {}
+                                      keys={
+                                            go-ids -> go_id-term_text
+                                            }
+                              "seq" -> protein sequence (str)
+                              }
+            
+    Args:
+        None
+    Returns:
+        data (dict) - data structure for relevant data, see above for keys
+    '''
+    
     fs = os.listdir('./data/xml/')
     f = './data/xml/' + fs[0]
     assert f[-4:] == '.xml', "trying to parse a non- xml file" 
@@ -67,7 +88,7 @@ def parse_xml():
     
     namespace = re.match(r"{.*}", root.tag).group()
     
-    data = dict()
+    data = {}
     for protein in root : 
         try: 
             name =  protein.find(namespace+"protein").find(namespace+"recommendedName").find(namespace+"fullName").text
@@ -85,15 +106,28 @@ def parse_xml():
             seq_elem = full_search(protein, att=namespace+"sequence")
             
             data[name]['seq'] = seq_elem[0].text.strip()
-            #print( data[name]['seq'] )
             
         except: 
-            print('failed to parse: ' + str(protein))
+            #print('failed to parse: ' + str(protein))
+            pass
             
     return data
 
 
 def analyze_ids(data): 
+    '''
+    This function takes a data object defined in parse_xml() and creates two new data structures. One is a |list|=3 whose membership signifies at least [list index + 2] shared go id's. The second is a dictionary such that the key is the go id and the value is a dictionary with keys: 
+                        'name' (set) - members are all proteins that share that go id
+                        'term'
+    
+    Args:
+        data (dict) - data structure to be analyzed
+    Returns:
+        all_ids - dict(keys=goid -> {keys('name','term')})
+        shared_id = [{},{},{}]
+        ids shared in 2  3  4   proteins - tiered such that 
+                                            shared_id[1] in shared_id[0] -> True
+    '''
     
     all_ids = dict()
     # indice (i) represent set of ids shared among at least i+2 proteins 
@@ -107,14 +141,28 @@ def analyze_ids(data):
             else: 
                 all_ids[goid]['name'].add(prot)
                 # add the id to shared membership group, so all ids in 2 are in 1 , 3 in 2... 
-                #print(all_ids[goid]['name'])
-                #print(len(all_ids[goid]['name']))
                 shared_id[len(all_ids[goid]['name'])-2].add(goid)
 
     return (all_ids, shared_id)
     
 
 def write_table(data, ids, identity_col=False, name=''):
+    '''
+    writes table to a .csv file - tab delimited. Located in /data/
+    
+    Columns such that: 
+        GO ID     GO term      Protein Names [optional]
+        id...     term...      protein name(s)... (comma delimited)
+        ...       ...          ....         
+        
+    Args:
+     data (dict) - data to be written to table
+     ids (list) - list of sets, membership signifies shared ids in at least i+2 proteins
+     identity_col (boolean, default=False) - option to add Protein Names column 
+     name (str, default='') - string to append to file name for uniqueness 
+    Returns:
+        None
+    '''
     
     with open('./data/common_ids-' + name + '.csv','w') as f: 
         f.write('GO ID\tGO term')
@@ -132,24 +180,19 @@ def write_table(data, ids, identity_col=False, name=''):
             else: 
                 f.write('\n')
                      
-            
-                
-'''
-Tyrosine protein kinases specific active-site signature (PS00109):
-[LIVMFYC]-{A}-[HY]-x-D-[LIVMFY]-[RSTAC]-{D}-{PF}-N-[LIVMFYC](3)
-Tyrosine kinase phosphorylation site (PS00007):
-[RK]-x(2)-[DE]-x(3)-Y or [RK]-x(3)-[DE]-x(2)-Y
-
-down vote
-Use a dictionary to look up the one letter codes:
-
-d = {'CYS': 'C', 'ASP': 'D', 'SER': 'S', 'GLN': 'Q', 'LYS': 'K',
-     'ILE': 'I', 'PRO': 'P', 'THR': 'T', 'PHE': 'F', 'ASN': 'N', 
-     'GLY': 'G', 'HIS': 'H', 'LEU': 'L', 'ARG': 'R', 'TRP': 'W', 
-     'ALA': 'A', 'VAL':'V', 'GLU': 'E', 'TYR': 'Y', 'MET': 'M'}
-
-'''
 def seq_match(protein_name, seq, pattern = '', pattern_name='none given'):
+    '''
+    match given regular expression pattern (converted from prosite pattern) in given amino acid sequence. Print results to console. 
+    
+    Args:
+      protein_name (str) - 
+      seq (str) - aa sequence
+      pattern (str) - regular expression pattern 
+      pattern_name (str) - prosite pattern id
+      
+    Returns:
+        None
+    '''
     print('\n-----------------------------------')
     print('PROSITE CONVERTED SEQUENCE MATCHING - pattern id: ' + pattern_name )
     print('-----------------------------------')
@@ -183,12 +226,13 @@ if __name__ == '__main__' :
     write_table(goids, shared_ids[0], name='commonto2proteins', identity_col=True)
     
     # prosite patterns 
-   # (PS00007):
-#[RK]-x(2)-[DE]-x(3)-Y or [RK]-x(3)-[DE]-x(2)-Y
-    
     for prot in data: 
+        # (PS00109):
+        #[LIVMFYC]-{A}-[HY]-x-D-[LIVMFY]-[RSTAC]-{D}-{PF}-N-[LIVMFYC](3)
         seq_match(prot, data[prot]['seq'], pattern = '[LIVMFYC][^A][HY].D[LIVMFY][RSTAC][^D][^PF]N[LIVMFYC]{3}', pattern_name = 'PS00109')
         
+        # (PS00007):
+        #[RK]-x(2)-[DE]-x(3)-Y or [RK]-x(3)-[DE]-x(2)-Y
         seq_match(prot, data[prot]['seq'], pattern = '[RK].{2}[DE].{3}Y | [RK].{3}[DE].{2}Y', pattern_name = 'PS00007')
     
     
