@@ -20,6 +20,21 @@ GO terms. (2 points)
 common across at least 2 proteins. Make sure to include an additional column specifying the
 associated proteins. The output file should have three columns: Protein names, GO ID, and GO term
 (4 points).
+
+Regular Expressions:
+5) Write a Python program to extract the protein sequence from each protein's XML file (you may have
+to remove spaces, newline characters, etc.). (4 points)
+6) Translate the following PROSITE patterns into regular expressions, and write a function to search
+each protein sequence for these sites. If matches are found, print out the matching sequence and
+the location of each match to the screen. (4 points)
+PROSITE Patterns:
+Tyrosine protein kinases specific active-site signature (PS00109):
+[LIVMFYC]-{A}-[HY]-x-D-[LIVMFY]-[RSTAC]-{D}-{PF}-N-[LIVMFYC](3)
+Tyrosine kinase phosphorylation site (PS00007):
+[RK]-x(2)-[DE]-x(3)-Y or [RK]-x(3)-[DE]-x(2)-Y
+http://prosite.expasy.org/scanprosite/scanprosite_doc.html
+
+
 '''
 
 import xml.etree.ElementTree as ET
@@ -63,8 +78,14 @@ def parse_xml():
             data[name]["term_elements"] = full_search(protein, att="[@type='term']")
             
             data[name]["ids"] = {}
+            
             for GO in data[name]["GO_IDS"] :
                 data[name]["ids"][(GO.get('id'))] = GO[0].get("value")
+            
+            seq_elem = full_search(protein, att=namespace+"sequence")
+            
+            data[name]['seq'] = seq_elem[0].text.strip()
+            #print( data[name]['seq'] )
             
         except: 
             print('failed to parse: ' + str(protein))
@@ -113,8 +134,39 @@ def write_table(data, ids, identity_col=False, name=''):
                      
             
                 
-    
+'''
+Tyrosine protein kinases specific active-site signature (PS00109):
+[LIVMFYC]-{A}-[HY]-x-D-[LIVMFY]-[RSTAC]-{D}-{PF}-N-[LIVMFYC](3)
+Tyrosine kinase phosphorylation site (PS00007):
+[RK]-x(2)-[DE]-x(3)-Y or [RK]-x(3)-[DE]-x(2)-Y
 
+down vote
+Use a dictionary to look up the one letter codes:
+
+d = {'CYS': 'C', 'ASP': 'D', 'SER': 'S', 'GLN': 'Q', 'LYS': 'K',
+     'ILE': 'I', 'PRO': 'P', 'THR': 'T', 'PHE': 'F', 'ASN': 'N', 
+     'GLY': 'G', 'HIS': 'H', 'LEU': 'L', 'ARG': 'R', 'TRP': 'W', 
+     'ALA': 'A', 'VAL':'V', 'GLU': 'E', 'TYR': 'Y', 'MET': 'M'}
+
+'''
+def seq_match(protein_name, seq, pattern = '', pattern_name='none given'):
+    print('\n-----------------------------------')
+    print('PROSITE CONVERTED SEQUENCE MATCHING - pattern id: ' + pattern_name )
+    print('-----------------------------------')
+    
+    # make sure there are no unwanted characters 
+    seq = re.sub('[^CIGADPHVSTLEQFRYKNWM]','', seq)
+    
+    matches = re.finditer(pattern, seq)
+    
+    print(protein_name + 'sequence pattern matches: ')
+    for match in matches: 
+        print('--------------------------------------')
+        print('pattern match string: ' + match.group())
+        print('pattern match indices (start, stop): ', match.span())
+
+    print('No further matches found')
+    
 
 if __name__ == '__main__' :  
     
@@ -130,6 +182,14 @@ if __name__ == '__main__' :
     # make table with common ids in at least 2 proteins 
     write_table(goids, shared_ids[0], name='commonto2proteins', identity_col=True)
     
+    # prosite patterns 
+   # (PS00007):
+#[RK]-x(2)-[DE]-x(3)-Y or [RK]-x(3)-[DE]-x(2)-Y
+    
+    for prot in data: 
+        seq_match(prot, data[prot]['seq'], pattern = '[LIVMFYC][^A][HY].D[LIVMFY][RSTAC][^D][^PF]N[LIVMFYC]{3}', pattern_name = 'PS00109')
+        
+        seq_match(prot, data[prot]['seq'], pattern = '[RK].{2}[DE].{3}Y | [RK].{3}[DE].{2}Y', pattern_name = 'PS00007')
     
     
 

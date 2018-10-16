@@ -1,4 +1,4 @@
-GO id	term	proteins
+GO ID	GO term	Protein Names
 GO:0004714	F:transmembrane receptor protein tyrosine kinase activity	Receptor tyrosine-protein kinase erbB-2,Epidermal growth factor receptor,Receptor tyrosine-protein kinase erbB-4
 GO:0038083	P:peptidyl-tyrosine autophosphorylation	Epidermal growth factor receptor,Receptor tyrosine-protein kinase erbB-4
 GO:0031625	F:ubiquitin protein ligase binding	Receptor tyrosine-protein kinase erbB-3,Epidermal growth factor receptor
