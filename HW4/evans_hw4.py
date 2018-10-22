@@ -38,6 +38,7 @@ Deliverables:
 
 from bs4 import BeautifulSoup 
 import urllib.request as url 
+import re
 
 WIKI_URL = "https://en.wikipedia.org/wiki/Nucleic_acid_notation" 
 
@@ -58,18 +59,67 @@ def parse_table(table, kbs_to_extract):
         tbl_dic <dictionary> data with keys = kbs_to_extract and second level keys: base_rep and compliment 
     '''
     tbl_dic = {} 
-    for i, row in enumerate(table.find_all('tr')[1:]): # only one table to grab 
-
+    for row in table.find_all('tr')[1:]: # only one table to grab 
         kb = row.find('td').string 
         
         if kb in kbs_to_extract: 
             tbl_dic[kb] = {'base_rep':set(), 'complement':row.find_all('td')[-1].string.strip()} 
-            for j, textO in enumerate(row.find_all('td')[2:5]): 
+            for j, textO in enumerate(row.find_all('td')[2:6]): 
                 text = textO.string
                 if (text is not 'None' and text is not None):
                     tbl_dic[kb]['base_rep'].add(text)
-    print(tbl_dic)
     return tbl_dic
+
+
+
+class DNA_SEQ: 
+    ResEnzymeDict = {
+            'EcoRI': 'GAATTC',
+            'EalI': 'YGGCCR',
+            'ErhI': 'CCWWGG',
+            'EcaI': 'GGTNACC',
+            'FblI': 'GTMKAC',
+            }
+    
+    def __init__(self, DNA, codex): 
+        if not re.sub('[ATCG]', '', DNA) == '': raise SeqTypeError()
+        
+        self.codex = codex # extracted table info 
+        self.DNA = DNA 
+    
+    def __generate_re_patterns__(self): 
+        self.ResEnzymeRE = {}
+        for name in self.ResEnzymeDict: 
+            codified_pattern = self.ResEnzymeDict[name]
+            pattern = ''
+            for kb in codified_pattern: 
+                pattern += "[" + set_to_string(self.codex[kb]['base_rep']) + "]"
+            self.ResEnzymeRE[name] = pattern
+        
+        return self.ResEnzymeRE
+    
+    def restriction_sites(self): 
+        self.__generate_re_patterns__()
+        for name in self.ResEnzymeRE: 
+            srch = re.finditer(self.ResEnzymeRE[name],self.DNA)
+            
+            output = '------------------------------------------------------\n'
+            output+= 'DNA pattern match(es) to code: ' + name + '\n'
+            for find in srch: 
+                output+='index span: ' + str(find.span(0)) + '\n'
+                output+='DNA sequence match: ' + str(find.group(0)) + '\n'
+            output += '-------------------------------------------------------'
+            
+            # had a very difficult time finding any sleek way to check if an interable object is empty or not, so this is my work around to only print the objects that are not empty. Bit wasteful, but easy implementation. 
+            if (len(output) > 146) : 
+                print(output)
+
+def set_to_string(_set): 
+    s = ''
+    for item in _set: 
+        s += str(item)  
+    return s
+    
 
 
 if __name__ == "__main__" : 
@@ -80,9 +130,15 @@ if __name__ == "__main__" :
     NAN = BeautifulSoup(html, 'lxml')
     NAN.prettify() 
     tables = NAN.find_all('table')
-    print(type(tables[0]))
+
+    # parse the data and add intuitive knowledge about N 
+    tbl_data = parse_table(tables[0], {'W', 'S', 'M', 'K', 'R', 'Y', 'N', 'A', 'C', 'G', 'T'} )
+    print(tbl_data)
     
-    tbl_data = parse_table(tables[0], {'W', 'S', 'M', 'K', 'R', 'Y'} )
+    mySeq = DNA_SEQ('GATTACAGAATTCTTTTTTGAATTC',tbl_data)
+    mySeq.restriction_sites()
+    print(mySeq.ResEnzymeRE)
+    
             
     
     
