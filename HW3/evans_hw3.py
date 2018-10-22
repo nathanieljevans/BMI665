@@ -60,6 +60,7 @@ def full_search(root, att = ''):
 def parse_xml(): 
     '''
     This function reads in the xml file, searches for the required data and stores it in a dictionary such that: 
+        
             data {}
                 key=protein_names -> 
                     dict {}
