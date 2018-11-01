@@ -7,10 +7,11 @@ Created on Mon Oct 22 13:54:51 2018
 @HW: 4 
 
 This program can be run from bash command line using the command: 
-    $ python evans_hw4.py <DNA-seq-string> 
+    $ python evans_hw4.py <DNA-path-name> 
     eg. 
-    $ python evans_hw4.py "GATTACA" 
+    $ python evans_hw4.py "dna.txt" 
     
+    Where the dna.txt file is stored in ./data/ 
     Alternatively, running without an argument will result in a default DNA seq test. 
     
     The purpose of this script is to:
@@ -167,11 +168,13 @@ if __name__ == "__main__" :
     
     # seq data input method 
     if (len(sys.argv) > 1): 
-        DNA = sys.argv[1]
-    else: #    EcoRI ------EalI --------ErhI ---------- EcalI -------- FblI
+        path = sys.argv[1]
+        with open('./data/'+path, 'r') as f: 
+            DNA = f.read().strip()
+    else:
+        print('running test case')
         DNA = "GAATTCAAAAAACGGCCAAAAAAAAACCTTGGAAAAAAAAGGTAACCAAAAAAAAAGTATAC"
-        print('test case, seq used: ' + DNA)
-            
+        
     # anaylze data
     mySeq = DNA_SEQ(DNA, tbl_data)
     mySeq.restriction_sites()
