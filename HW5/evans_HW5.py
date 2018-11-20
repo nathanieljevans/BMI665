@@ -2,32 +2,36 @@
 """
 Created on Thu Nov  1 10:23:05 2018
 
-@author: natha
+@author: nathaniel evans
+@class: BMI665 
+@prof: mike mooney 
+@date: 11/6/2018 
+@HW: 5 
+
+This module can be imported or run in console by navigating to the appropriate directory and using the command: 
+    $ python evans_HW5.py 
+    
+There must be a ./data directory with the script. 
+
+Be careful using these methods to create or work with graphs > 10K nodes as memory and search traversals will take substantial memory and compute time. 
 """
 
 import networkx as nx 
 import random as rand 
 from matplotlib import pyplot as plt 
 
-'''
-Assignment #5
-Submit source code and write-up (including program output) through Sakai.
-BMI 565/665 Bioinformatics Programming and Scripting 
-Create a single module that contains the following three functions:
-1) A function to create a random graph. This function will take a single parameter for the number
-of nodes in the graph, and will return a NetworkX undirected graph object.
-'''
-def create_graph(num_nodes = 10, connectivity=0.75):
+def create_graph(num_nodes = 10, connectivity=0.25):
     '''
     Generate a random graph in O(n^2)
     
-    test average connectivity 
-    >>> 0.55 > (len(create_graph(num_nodes=1000, connectivity=0.5).edges()) / 1000) > 0.45
-    
     input 
         num_nodes <int> number of nodes to be included in the graph 
-        connectivity <float>
+        connectivity <float> probability of being connected to any other node 
+    
+    output
+        G <networkx graph> graph with num_nodes and liklihood to be connected with any other node of connectivity*100
     '''
+    
     G = nx.Graph() 
     for i in range(num_nodes): 
         G.add_node(i, label=i) 
@@ -37,8 +41,6 @@ def create_graph(num_nodes = 10, connectivity=0.75):
                 G.add_edge(i, node)
     return G
             
-        
-    
 def rand_connect(p): 
     ''' 
     return 0/1 depending on probability, p refers to 1. 
@@ -54,16 +56,9 @@ def rand_connect(p):
     else: 
         return False
 
-
-'''
-2) A function that implements a depth-first search of a graph. This function will take two
-parameters: a NetworkX graph object and the node at which to start the search. It will return a
-list of node names in the order they were visited. (Hint: use a stack to implement this algorithm)
-'''
-# ??? DOUBLE CHECK THAT THIS IS ACTUALLY DEPTH FIRST ORDER 
 def depth_search(G, current, visited = None): 
     '''
-    depth first search starting at a given node 
+    recursive depth first search starting at a given node 
     
     inputs
         G <networkx> graph to search 
@@ -73,11 +68,10 @@ def depth_search(G, current, visited = None):
     outputs 
         <node_order> nodes of graph G in order they were visited. 
     '''
+    
     if (not visited): 
-        print('reset')
         visited = set()
-    #visited.clear() # without this, multiple calls will fail. Why is visited not reset after the method finishes? The namespace should collapse once the function finishes, right? 
-    print('visited',visited)
+    #visited.clear() # without this, multiple calls will fail. Why is visited not reset after the method finishes? The namespace should collapse once the function finishes, right? <-- I'd actually like to discuss this 
     
     node_order = [current]
     visited.add(current)
@@ -87,14 +81,6 @@ def depth_search(G, current, visited = None):
             node_order = depth_search(G,current=node, visited=visited) + node_order
 
     return node_order
-
-
-'''
-3) A function that implements a breadth-first search of a graph. This function will take two
-parameters: a NetworkX graph object and the node at which to start the search. It will return a
-list of node names in the order they were visited. (Hint: use a queue to implement this
-algorithm)
-'''
 
 def breadth_search(G, start): 
     '''
@@ -120,26 +106,9 @@ def breadth_search(G, start):
         
     return order
 
-'''
-Use the module to do the following:
-4) Create and draw a random graph with 10 nodes (show the node labels on the drawing and save
-the figure to a file).
-5) Run a depth-first search on the random graph. Show the order in which the nodes were visited.
-6) Run a breadth-first search on the random graph. Show the order in which the nodes were
-visited.
-7) Use either search algorithm to determine whether the random graph is connected (DON’T use
-the NetworkX is_connected() function).
-8) Also, do 5 through 7 above using the example karate club graph shown in class (start at node 0).
-Deliverables:
-1. A Python module containing the functions specified above.
-2. A word document showing the commands for importing and using the module, along with the
-output for 4-8 above (please paste the figure of the random graph in this document).
-
-'''
-
-def save_graph(G, path='./output/'): 
+def save_graph(G, path='./output/', name = 'random_graph'): 
     '''
-    saves (and displays.) a circular drawn graph to file. 
+    saves a graph plot to file. 
     
     input 
         G <networkx graph> graph to be drawn and saved 
@@ -151,24 +120,32 @@ def save_graph(G, path='./output/'):
     
     f = plt.figure() 
     nx.draw(G,with_labels=True, ax = f.add_subplot(111))
-    plt.savefig(path + 'random_graph.png') 
+    plt.savefig(path + name + '.png') 
+    # plt, this should get cleared before the next 
+    plt.clf()
     
 def is_connected(G): 
+    ''' 
+    Checks a graph to see if it's fully connected (any node can be traversed to any other node)
     
+    input 
+        G <networkx graph> G to check connectivity 
+    
+    output
+        <boolean> True -> fully connected 
+    '''
     order = depth_search(G,0)
     if len(order) < len(G): 
         return False
         
     return True
 
-
 if __name__ == '__main__' : 
-    print('starting...')
-    G = create_graph(num_nodes=10, connectivity=.15)
+    G = create_graph(num_nodes=10, connectivity=.2)
     
     print('depth first search:', depth_search(G, 0))
     
-    print('breadth first search:', breadth_search(G, 1) )
+    print('breadth first search:', breadth_search(G, 0))
     
     print('graph is connected:', is_connected(G)) 
     
@@ -176,13 +153,14 @@ if __name__ == '__main__' :
     
     G2 = nx.karate_club_graph() 
     
-    print('[karate club] depth first search:\n\t', depth_search(G2, 0))
+    print('[karate club] depth first search:\n', depth_search(G2, 0))
     
-    print('[karate club] breadth first search:\n\t', breadth_search(G2, 0))
+    print('[karate club] breadth first search:\n', breadth_search(G2, 0))
     
     print('[karate club] graph is connected:', is_connected(G2)) 
-    
-    nx.draw_circular(G2, with_labels=True) # WHY DOES nx.draw sometime show unconnected nodes? 
+       
+    plt.clf()
+    nx.draw(G2, with_labels=True)
     
     # test connectivity 
     #print((len(create_graph(num_nodes=100, connectivity=0.75).edges())*2) / 100e3)
