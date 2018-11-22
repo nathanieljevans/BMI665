@@ -13,15 +13,21 @@ Project Description: https://sakai.ohsu.edu/access/content/group/BMI-565-665-DL-
 
 kegg: https://www.genome.jp/kegg/pathway.html
 https://www.genome.jp/dbget-bin/www_bget?pathway:map05222
+
+
+The goal of this research project is to use differentially expressed genes following a flu infection to highlight critical infection response pathways. Next, we compare the conservation between species homologs between differentially expressed genes and non-differentially expressed genes to see how the conserved infection response is between species. 
 """
 
 data_path = './data/BMI565_ResearchProject_Data/'
-from matplotlib import pyplot as plt 
-from Bio import Entrez 
-from Bio.Align.Applications import ClustalwCommandline
-import sys 
 
-sys.path.append('/c/ProgramData/Start Menu/Programs/ClustalW2') # can't get the clustalw2 to runnnn
+
+from matplotlib import pyplot as plt 
+import seaborn as sns 
+from Bio import Entrez, AlignIO 
+from Bio.Align.Applications import ClustalwCommandline
+import os
+import pickle 
+import pandas as pd 
 
 
 class pathway: 
@@ -66,7 +72,7 @@ class pathway:
             search_handle = Entrez.esearch(db='nuccore',term= gene_sym + '[Gene Name] AND ' + species + '[organism]')
             record = Entrez.read(search_handle)
             ids = record["IdList"]
-            print('ids', ids)
+            #print('ids', ids)
             
             result = Entrez.efetch(db="nuccore", id=ids[0], rettype="fasta", retmode="xml")
             text = Entrez.read(result)[0]
@@ -76,36 +82,91 @@ class pathway:
             return Entrez.efetch(db="nuccore", id=ids[0], rettype="fasta", retmode="txt").read()
         
         except: 
-            raise #entrez_search_failure
+            print( "failed to retrieve the %s gene for %s species" %(gene_sym, species.upper()) ) 
+            return None #entrez_search_failure
+    
+    def calculate_edit_distance(self, seq1, seq2): 
+        
+        count = 0 
+        for b1, b2 in zip(seq1, seq2): 
+            if (b1 == b2): 
+                count += 1 
             
+        return count / max( len(seq1), len(seq2) )
+        
         
     def get_edit_distances(self, gene): 
         
         species = ['homo sapiens', 'mus musculus', 'canis lupus familiaris'] 
         
+        self.gene_edit_dist = {} 
+        
         for gene in self.group: 
+            
+            print('calculating edit distances for:', gene)
             
             # write fasta file to disk for comparison 
             human_fasta = self.get_gene_seq(gene, species[0])
             mouse_fasta = self.get_gene_seq(gene, species[1])
             dog_fasta = self.get_gene_seq(gene, species[2])
+            fasta = [human_fasta, mouse_fasta, dog_fasta]
             
-            full_fasta = human_fasta + '\n' + mouse_fasta + '\n' + dog_fasta
-
-            with open('./temp/unaligned.fasta', 'w') as f: 
-                f.write(full_fasta)
+            if (None not in fasta): 
+            
+                full_fasta = '\n'.join(fasta)
+    
+                with open('./temp/unaligned.fasta', 'w') as f: 
+                    f.write(full_fasta)
+                    
+                # run clustalw  
+                clustalw_exe = '\\Program Files (x86)\\ClustalW2\\clustalw2.exe'
+                output  = './temp/aligned-' + gene + '.aln'
+                assert os.path.isfile(clustalw_exe), "Clustal W executable missing"
+                command = ClustalwCommandline(clustalw_exe, infile="./temp/unaligned.fasta", outfile = output)
+                stdout, stderr = command()
                 
-            # run clustalw  # ~/Documents/BMI665/BMI665/research_project
-            command = ClustalwCommandline("clustalw2", infile="./temp/unaligned.fasta")
-            stdout, stderr = command()
+                # read alignment file into ram 
+                align = AlignIO.read(output, 'clustal')
+                #print(align[0]) # mouse
+                #print(align[1]) # dog
+                #print(align[2]) # human
+                
+                # calculate edit distance # save human-mouse e-dist, human-canis e-dist 
+                
+                self.gene_edit_dist[gene] = {'human-mouse' : self.calculate_edit_distance(align[2], align[0]), 'human-dog' : self.calculate_edit_distance(align[1], align[2])}
             
-            # read alignment file into ram 
-            print(stdout)
-            # calculate edit distance 
+            else: 
+                print('failed to process: %s' % gene)
+        
+        with open('./data/edit_dists.pkl', 'w') as f: 
+            pickle.dump(self.gene_edit_dist, f)
             
-            # save human-mouse e-dist, human-canis e-dist 
+    def plot_conservation(self, species):
+        
+        assert species in ['human-mouse','human-dog'], 'wrong species comparison input' 
+        
+        if (os.path.isfile('./data/edit_dists.pkl')): 
+            with open('./data/edit_dists.pkl', 'r') as f: 
+                self.gene_edit_dist = pickle.load(f)
+                
+        else: 
+            self.get_edit_distances(self.group)
             
-            
+        DE_conserved = list(map(lambda x: self.gene_edit_dist[x][species], self.gene_edit_dist.keys().intersection(self.DE_genes)))
+        
+        nonDE_conserved = list(map(lambda x: self.gene_edit_dist[x][species], self.gene_edit_dist.keys().intersection(self.nonDE_genes)))
+        
+        
+        df = pd.dataframe('conservation' = DE_conserved + nonDE_conserved, 'DiffExp' = ['DE']*len(DE_conserved) + ['non-DE']*len(nonDE_conserved) )
+        
+        ax = sns.boxplot(x='DiffExp', y='conservation', data=df)
+        
+        fig1 = plt.figure()
+        
+        fig1.add_axes(ax)
+        
+        plt.show()
+        
     
 class entrez_search_failure(Exception): 
     
@@ -152,7 +213,7 @@ if __name__ == '__main__' :
     
     sorted_pathways = list(pathways.values())
     sorted_pathways.sort(reverse=True)
-    print(sorted_pathways[0])
+    #print(sorted_pathways[0])
     
     
     ys = list(map(lambda x: x.odds_ratio, sorted_pathways))
@@ -172,8 +233,13 @@ if __name__ == '__main__' :
     # species : Homo Sapiens, mus musculus, canis lupus
     
     
-    tep.get_edit_distances(list(tep.group)[0]) 
+    #tep.get_edit_distances(list(tep.group)[0]) 
+    
+    #print(tep.gene_edit_dist)
     
 
+    tep.plot_conservation(species = 'human-mouse')
     
+
+    tep.plot_conservation(species = 'human-dog')
     
