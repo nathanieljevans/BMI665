@@ -14,13 +14,13 @@ from matplotlib import pyplot as plt
 import seaborn as sns 
 import numpy as np 
 from scipy.stats import norm
+import statsmodels.api as sm
 
 
 HRT_DATA_URL = 'https://sakai.ohsu.edu/access/content/group/BMI-565-665-DL-F18/Week%208/heart.dat'
 
  
 def read_data(): 
-    
     
     # Column Names to pass to read_csv()
     names = ["age", "sex", "pain_type", "resting_bp", "chol", "fast_sugar", "ekg", "max_hr", "angina", "old_peak", "peak_slope", "n_major", "thal", "hdd"]
@@ -63,12 +63,10 @@ if __name__ == '__main__' :
     sns.heatmap(corr, mask=mask, cmap=cmap, annot=True, vmax=.3, center=0,
             square=True, linewidths=.5, cbar_kws={"shrink": .5})
     
+    f.savefig('./outputs/var_corr_matrix.png')
     
     ''' 3. Identify the three variables with a high correlation (absolute value > 0.2) with the dependent variable (‘old_peak’; column 10). '''
     
-    # n_major : age (+) - 0.36
-    # old_peak : max_hr (-) - 0.35
-    # max_hr : age (-) - 0.4
 
     ''' 4. Check whether the variables’ distributions appear normal using a KDE plot. ''' 
     
@@ -76,13 +74,38 @@ if __name__ == '__main__' :
     
     f.suptitle('Population Distribution')
     
-    plot_kde(real_df['n_major'], ax= ax1)   
+    plot_kde(real_df['max_hr'], ax= ax1)   
     plot_kde(real_df['age'], ax= ax2)
-    plot_kde(real_df['max_hr'], ax= ax3)
+    ax2.set_ylim( (0,0.05) )
+    plot_kde(real_df['resting_bp'], ax= ax3)
     plot_kde(real_df['old_peak'], ax= ax4)
-
+    
+    f.savefig('./outputs/variable_pdf.png')
+    
+    
     ''' 5. Run a univariate linear regression analysis for each variable, with ‘old_peak’ as the dependent variable, using the statsmodels package. Visualize each regression using a joint plot. '''
-
+    
+    # old_peak ~ max_hr / chol / resting_bp
+    Y = real_df['old_peak']
+    
+    dep = ['max_hr', 'age', 'resting_bp']
+    
+    Xs = [sm.add_constant(real_df[d], prepend=False) for d in dep]
+    
+    models = [sm.OLS(Y, x) for x in Xs]
+    
+    [(open('./outputs/sum_%s.txt' %(dep[i]),  'w').write(str(mod.fit().summary()))) for i,mod in enumerate(models)] # is this leaving open file handles or does garbage collection close them since there is no assigned handle ? 
+    
+    [sns.jointplot(d, 'old_peak', data=real_df, kind='reg').savefig('./outputs/regression_%s' %(d)) for d in dep]
 
     ''' 6. Create a multiple regression model using the three variables. How does it perform?  '''
+    
+    X = sm.add_constant(real_df[dep], prepend=False)
+    
+    mod = sm.OLS(Y, X) 
+    fit = mod.fit() 
+    with open('./outputs/full_model_summary.txt' , 'w') as f: 
+        f.write(str(fit.summary()))
+        
+    
     

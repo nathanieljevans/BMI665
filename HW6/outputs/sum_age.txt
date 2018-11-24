@@ -1,0 +1,25 @@
+                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:               old_peak   R-squared:                       0.038
+Model:                            OLS   Adj. R-squared:                  0.034
+Method:                 Least Squares   F-statistic:                     10.51
+Date:                Sat, 24 Nov 2018   Prob (F-statistic):            0.00134
+Time:                        15:24:08   Log-Likelihood:                -414.03
+No. Observations:                 270   AIC:                             832.1
+Df Residuals:                     268   BIC:                             839.3
+Df Model:                           1                                         
+Covariance Type:            nonrobust                                         
+==============================================================================
+                 coef    std err          t      P>|t|      [0.025      0.975]
+------------------------------------------------------------------------------
+age            0.0244      0.008      3.241      0.001       0.010       0.039
+const         -0.2792      0.416     -0.672      0.502      -1.098       0.539
+==============================================================================
+Omnibus:                       64.132   Durbin-Watson:                   2.108
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):              113.689
+Skew:                           1.281   Prob(JB):                     2.05e-25
+Kurtosis:                       4.882   Cond. No.                         335.
+==============================================================================
+
+Warnings:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
