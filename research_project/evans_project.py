@@ -16,9 +16,7 @@ https://www.genome.jp/dbget-bin/www_bget?pathway:map05222
 
 The goal of this research project is to use differentially expressed genes following a flu infection to highlight critical infection response pathways. Next, we compare the conservation between species homologs for differentially expressed genes and non-differentially expressed genes to see how the conserved infection-response is between species. 
 """
-
 data_path = './data/BMI565_ResearchProject_Data/'
-
 
 from matplotlib import pyplot as plt 
 import seaborn as sns 
@@ -29,10 +27,22 @@ import pickle
 import pandas as pd 
 from scipy.stats import mannwhitneyu
 
-
 class pathway: 
-    
+    '''
+    This class represents a gene pathway, with various attributes and functions pertaining to the analysis of a specific pathway, primarily represented as a group of gene symbols. 
+    '''
     def __init__(self, raw, DE, allPB): 
+        '''
+        parses pathway data and separates into differentially expressed genes and not.
+        input
+            raw <str> raw gene pathway data 
+            DE <set> genes that are differentially expressed after flu infection 
+            allPB <set> all genes included in the dataset 
+            
+        outputs 
+            pathway object 
+        
+        '''
         Entrez.email = 'evansna@ohsu.edu' 
         
         self.ID, self.name, self.group = self.parse(raw)
@@ -47,7 +57,17 @@ class pathway:
         self.odds_ratio = (len(self.DE_genes) * len(self.nonPathway_nonDE_genes)) / (len(self.nonDE_genes) * len(self.nonPathway_DE_genes))
     
     def parse(self, raw): 
+        '''
+        parses the raw pathway data 
         
+        inputs 
+            raw <str> data to be parsed
+            
+        outputs 
+            ID <str> pathway ID 
+            name <str> pathway name 
+            group <set> pathway gene symbols <str> 
+        '''
         s = raw.split('\t')
         ID = s[0]
         name = s[1]
@@ -62,13 +82,20 @@ class pathway:
         return (self.odds_ratio < other.odds_ratio)
 
     def get_gene_seq(self, gene_sym, species): 
-        # returns fasta file text 
+        ''' 
+        Retrieves the gene sequence from the nucleotide database (nuccore) and returns it as a fasta file in str format. 
         
-        
+        input
+            gene_sym <str> gene_sym to search for 
+            species <str> which species to return 
+            
+        output 
+            fasta file <str> representing the search terms, <None> if the search fails. 
+        '''
         assert species.lower() in set(['homo sapiens', 'mus musculus', 'canis lupus familiaris']), 'improper species input' 
         
         try: 
-            
+            # There are a number of failures, search results in no valid responses 
             search_handle = Entrez.esearch(db='nuccore',term= gene_sym + '[Gene Name] AND ' + species + '[organism]')
             record = Entrez.read(search_handle)
             ids = record["IdList"]
@@ -199,11 +226,9 @@ class entrez_search_failure(Exception):
     def __str__(self): 
         return 'the entrez gene search failed to return a valid response' 
 
-
-
-
 if __name__ == '__main__' : 
     
+    # read data in 
     raw_DE = ''
     with open(data_path + 'H5N1_VN1203_DE_Probes.txt') as f :
         raw_DE = f.read().strip()
@@ -223,9 +248,10 @@ if __name__ == '__main__' :
     raw_pathways = ''
     with open(data_path + 'KEGG_Pathway_Genes.txt') as f : 
         raw_pathways = f.read().strip()
-        
+     
+    # parse data and create pathway objects 
     pathways = {}   # gene ID -> pathway object 
-    genes2ID = {}  # list of genes (keys) -> sets of pathway IDs
+    genes2ID = {}  # list of genes (keys) -> sets of pathway IDs, Use this to search for all pathways that have X gene 
     for pw in raw_pathways[raw_pathways.index('\n'):].strip().split('\n'): 
         ID = pw[0:pw.index('\t')]
         pathways[ID] =  pathway(pw, DE, allPB) 
