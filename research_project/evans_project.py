@@ -177,7 +177,7 @@ class pathway:
         print('Finished calculating edit distances')
             
             
-    def plot_conservation(self, species, recalc = False):
+    def plot_conservation(self, species, recalc = False, ax=None):
         '''
         This function creates a boxplot comparing conservation of differentially expressed genes vs non-differentially expressed genes within the pathway.
         
@@ -206,13 +206,10 @@ class pathway:
         
         df = pd.DataFrame(data = {'conservation' : cons, 'DiffExp' : dexp } )
         
-        fig1 = plt.figure()
-        ax = sns.violinplot(x='DiffExp', y='conservation', data=df)
         
-        fig1.suptitle(species)
-        fig1.add_axes(ax)
+        sns.boxplot(x='DiffExp', y='conservation', data=df, ax=ax)
         
-        plt.show()
+        ax.set_title(species)
         
         manwhit = mannwhitneyu(DE_conserved, nonDE_conserved)
         
@@ -228,7 +225,7 @@ class entrez_search_failure(Exception):
 
 if __name__ == '__main__' : 
     
-    # read data in 
+    # data in ----------------------------------------------------------------
     raw_DE = ''
     with open(data_path + 'H5N1_VN1203_DE_Probes.txt') as f :
         raw_DE = f.read().strip()
@@ -248,7 +245,7 @@ if __name__ == '__main__' :
     raw_pathways = ''
     with open(data_path + 'KEGG_Pathway_Genes.txt') as f : 
         raw_pathways = f.read().strip()
-     
+    # ------------------------------------------------------------------------
     # parse data and create pathway objects 
     pathways = {}   # gene ID -> pathway object 
     genes2ID = {}  # list of genes (keys) -> sets of pathway IDs, Use this to search for all pathways that have X gene 
@@ -260,7 +257,9 @@ if __name__ == '__main__' :
                 genes2ID[gene].add(ID)
             else: 
                 genes2ID[gene] = set([ID])
-         
+    
+    # ------------------------------------------------------------------------
+    # Find highest differnitally expressed genes pathway 
     #example = pathways[(list(pathways.keys()))[0]]
     #print( example.DE_genes ) 
     #print( example.nonDE_genes)
@@ -269,7 +268,6 @@ if __name__ == '__main__' :
     sorted_pathways = list(pathways.values())
     sorted_pathways.sort(reverse=True)
     #print(sorted_pathways[0])
-    
     
     ys = list(map(lambda x: x.odds_ratio, sorted_pathways))
     xs = list(range(len(ys)))
@@ -292,9 +290,11 @@ if __name__ == '__main__' :
     
     #print(tep.gene_edit_dist)
     
+    fig, (ax1, ax2) = plt.subplots(nrows=1, ncols=2, figsize=(11,9))
+    plt.suptitle('Conservation of differentially expressed genes vs non-differentially expressed')
 
-    tep.plot_conservation(species = 'human-mouse', recalc=False)
+    tep.plot_conservation(species = 'human-mouse', recalc=False, ax=ax1)
     
 
-    tep.plot_conservation(species = 'human-dog')
+    tep.plot_conservation(species = 'human-dog', recalc=False, ax=ax2)
     
