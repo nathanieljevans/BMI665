@@ -129,6 +129,7 @@ class pathway:
             2. combines the 3 
         
         '''
+        Entrez.email = 'evansna@ohsu.edu'
         
         species = ['homo sapiens', 'mus musculus', 'canis lupus familiaris'] 
         
@@ -152,11 +153,13 @@ class pathway:
                     
                 # run clustalw  
                 clustalw_exe = '\\Program Files (x86)\\ClustalW2\\clustalw2.exe'
-                output  = './temp/aligned-' + gene + '.aln'
-                assert os.path.isfile(clustalw_exe), "Clustal W executable missing"
-                command = ClustalwCommandline(clustalw_exe, infile="./temp/unaligned.fasta", outfile = output)
-                stdout, stderr = command()
-                
+                target = 'aligned-' + gene + '.aln'
+                output  = './temp/' + target
+                if (target not in os.listdir('./temp/')): # Only do a realignment if necessary 
+                    assert os.path.isfile(clustalw_exe), "Clustal W executable missing"
+                    command = ClustalwCommandline(clustalw_exe, infile="./temp/unaligned.fasta", outfile = output)
+                    stdout, stderr = command()
+                    
                 # read alignment file into ram 
                 align = AlignIO.read(output, 'clustal')
                 
@@ -213,7 +216,7 @@ class pathway:
         
         manwhit = mannwhitneyu(DE_conserved, nonDE_conserved)
         
-        ax.legend(str(manwhit))
+        ax.text(x=-.2, y=-.03, s= 'Manwhitney P-Value: '+ str(manwhit.pvalue))
         
         print('Manwhitney test for species %s : %s' %(species.upper(), str(manwhit)))
     
@@ -224,3 +227,7 @@ class entrez_search_failure(Exception):
     
     def __str__(self): 
         return 'the entrez gene search failed to return a valid response' 
+
+def __print(msg, failures, status): 
+    print('\rSTATUS: %s \t MSG: %s \t Failures: %s' %(status, msg, failures))
+    

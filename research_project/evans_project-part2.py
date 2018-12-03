@@ -11,11 +11,12 @@ from evans_lib import *
 
 from matplotlib import pyplot as plt 
 
+data_path = './data/BMI565_ResearchProject_Data/'
 
 if __name__ == '__main__' : 
     
     with open('./outputs/chosen_pathway.pkl', 'rb') as f: 
-        tep = f.load(f)
+        tep = pickle.load(f)
     
     species = ( 'Homo Sapiens', 'mus musculus', 'canis lupus') 
     
