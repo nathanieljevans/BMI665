@@ -7,7 +7,12 @@ Created on Tue Nov 20 10:12:14 2018
 @class: BMI665 
 
 """
-import evans_lib
+from evans_lib import *
+
+from matplotlib import pyplot as plt 
+
+
+data_path = './data/BMI565_ResearchProject_Data/'
 
 if __name__ == '__main__' : 
     
@@ -79,8 +84,8 @@ if __name__ == '__main__' :
     fig, (ax1, ax2) = plt.subplots(nrows=1, ncols=2, figsize=(11,9))
     plt.suptitle('Conservation of differentially expressed genes vs non-differentially expressed')
 
-    tep.plot_conservation(species = 'human-mouse', recalc=True, ax=ax1)
+    tep.plot_conservation(species = 'human-mouse', recalc=False, ax=ax1)
     
 
-    tep.plot_conservation(species = 'human-dog', recalc=True, ax=ax2)
+    tep.plot_conservation(species = 'human-dog', recalc=False, ax=ax2)
     

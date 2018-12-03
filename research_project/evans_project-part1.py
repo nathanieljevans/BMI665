@@ -7,7 +7,12 @@ Created on Tue Nov 20 10:12:14 2018
 @class: BMI665 
 
 """
-import evans_lib
+from evans_lib import *
+
+from matplotlib import pyplot as plt 
+
+
+data_path = './data/BMI565_ResearchProject_Data/'
 
 if __name__ == '__main__' : 
     
@@ -34,15 +39,9 @@ if __name__ == '__main__' :
     # ------------------------------------------------------------------------
     # parse data and create pathway objects 
     pathways = {}   # gene ID -> pathway object 
-    genes2ID = {}  # list of genes (keys) -> sets of pathway IDs, Use this to search for all pathways that have X gene 
     for pw in raw_pathways[raw_pathways.index('\n'):].strip().split('\n'): 
         ID = pw[0:pw.index('\t')]
-        pathways[ID] =  pathway(pw, DE, allPB) 
-        for gene in pathways[ID].group : 
-            if (gene in genes2ID): 
-                genes2ID[gene].add(ID)
-            else: 
-                genes2ID[gene] = set([ID])
+        pathways[ID] = pathway(pw, DE, allPB) 
     
     # ------------------------------------------------------------------------
     # Find highest differnitally expressed genes pathway 
@@ -53,34 +52,17 @@ if __name__ == '__main__' :
     
     sorted_pathways = list(pathways.values())
     sorted_pathways.sort(reverse=True)
-    #print(sorted_pathways[0])
     
     ys = list(map(lambda x: x.odds_ratio, sorted_pathways))
     xs = list(range(len(ys)))
     
-    #plt.plot(xs, ys)
+    plt.plot(xs, ys, '*', color='blue')
+    plt.suptitle('sorted pathway odds ratio of DE genes')
+    plt.ylabel('odds ratio')
+    plt.xlabel('pathways')
+    plt.plot(xs[0:5], ys[0:5], 'o', color='red')
     
-    tep = sorted_pathways[0] # top expression pathway (TEP)
-    
-    print('\n\n\n\n')
-    print('ID:', tep.ID) 
-    print('name:', tep.name)
-    print('group:', tep.group)
-    
-    #print(tep.get_gene_seq(list(tep.group)[0], species = 'homo sapiens'))
-    
-    # species : Homo Sapiens, mus musculus, canis lupus
-    
-    
-    #tep.get_edit_distances(list(tep.group)[0]) 
-    
-    #print(tep.gene_edit_dist)
-    
-    fig, (ax1, ax2) = plt.subplots(nrows=1, ncols=2, figsize=(11,9))
-    plt.suptitle('Conservation of differentially expressed genes vs non-differentially expressed')
-
-    tep.plot_conservation(species = 'human-mouse', recalc=True, ax=ax1)
-    
-
-    tep.plot_conservation(species = 'human-dog', recalc=True, ax=ax2)
-    
+    for i in range(5):
+        print(sorted_pathways[i].name)
+        
+    with open(./data/)
