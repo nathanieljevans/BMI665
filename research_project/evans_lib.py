@@ -213,6 +213,8 @@ class pathway:
         
         manwhit = mannwhitneyu(DE_conserved, nonDE_conserved)
         
+        ax.legend(str(manwhit))
+        
         print('Manwhitney test for species %s : %s' %(species.upper(), str(manwhit)))
     
 class entrez_search_failure(Exception): 
