@@ -1,7 +1,6 @@
 #! /bin/sh
 
-# check that the relevant files are there (input data files (4))
-
+# check that the relevant files are there (input data files (4)) --------------
 
 if [ -e ./data/BMI565_ResearchProject_Data/H5N1_VN1203_DE_Probes.txt ]; then
     echo "DE Probes File exists"
@@ -24,17 +23,24 @@ else
     exit 1
 fi
 
+# run part 1 -----------------------------------------------------------------
 
+echo ""
+python evans_project-part1.py 
+echo "" 
 
+# check that part 1 executed properly ----------------------------------------
 
-# run part 1 
+if [ -e ./outputs/chosen_pathway.pkl ]; then
+    echo "Part 1 Script Executed Appropriately"
+else
+    echo "Part 1 did not execute properly. Exiting."
+    exit 1
+fi
 
+# run part 2 -----------------------------------------------------------------
 
-
-
-# check that part 1 executed properly 
-
-
-
-# run part 2 
-
+echo ""
+#python evans_project-part2.py
+echo ""
+ 
