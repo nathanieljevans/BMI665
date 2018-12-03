@@ -44,11 +44,7 @@ if __name__ == '__main__' :
         pathways[ID] = pathway(pw, DE, allPB) 
     
     # ------------------------------------------------------------------------
-    # Find highest differnitally expressed genes pathway 
-    #example = pathways[(list(pathways.keys()))[0]]
-    #print( example.DE_genes ) 
-    #print( example.nonDE_genes)
-    #print( example.DE_genes.union( example.nonDE_genes ) == example.group)
+    # Find highest differntially expressed genes pathway 
     
     sorted_pathways = list(pathways.values())
     sorted_pathways.sort(reverse=True)
@@ -62,7 +58,8 @@ if __name__ == '__main__' :
     plt.xlabel('pathways')
     plt.plot(xs[0:5], ys[0:5], 'o', color='red')
     
-    for i in range(5):
-        print(sorted_pathways[i].name)
+    
+    print('The pathway with the highest odds ratio for DE genes: \nName: %s\nID: %s' %(sorted_pathways[0].name, sorted_pathways[0].ID))
         
-    with open(./data/)
+    with open('./outputs/chosen_pathway.pkl', 'wb') as f: 
+        pickle.dump(sorted_pathways[0], f) 
