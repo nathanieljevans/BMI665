@@ -248,7 +248,7 @@ def ppprint(gene, fail, num, tot, msg):
     Outputs 
         None 
     '''
-    sys.stdout.write("Progress: %d/%d [failures: %d] \t Gene: %s \t ...%s   \r" % (num, tot, fail, gene, msg) )
+    sys.stdout.write("Progress: %d/%d [failures: %d] \t Gene: %s   ...%s   \r" % (num, tot, fail, gene, msg) )
     sys.stdout.flush()
     
     

@@ -41,6 +41,6 @@ fi
 # run part 2 -----------------------------------------------------------------
 
 echo ""
-#python evans_project-part2.py
+python evans_project-part2.py
 echo ""
  

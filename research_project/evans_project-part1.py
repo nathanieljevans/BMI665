@@ -63,3 +63,5 @@ if __name__ == '__main__' :
         
     with open('./outputs/chosen_pathway.pkl', 'wb') as f: 
         pickle.dump(sorted_pathways[0], f) 
+        
+    print(sorted_pathways[0].DE_genes)

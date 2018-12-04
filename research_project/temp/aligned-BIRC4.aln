@@ -1,0 +1,672 @@
+CLUSTAL 2.1 multiple sequence alignment
+
+
+NR_037916.1         ------------------------------------------------------------
+NR_125870.1         GGGCTCGGGCCGCCCCTCCTCCGGGACCCTCCCCTCGGGAACCCGTCGCCCGCGGCGCTT
+NM_001284458.1      ------------------------------------------------------------
+                                                                                
+
+NR_037916.1         ------------------------------------------------------------
+NR_125870.1         AGTTAGGACTGGAGTGCTTGGCGCGGTGGGTACAGCTCTTGTGGGTTTCCCGCCCTCCCT
+NM_001284458.1      ------------------------------------------------------------
+                                                                                
+
+NR_037916.1         ------------------------------------------------------------
+NR_125870.1         TCCTCTCCCTCTGCTCCCCTCCCCTCCCTTCCCCTCCCCTCTCTTCCCTCTCCTCTCCTC
+NM_001284458.1      ------------------------------------------------------------
+                                                                                
+
+NR_037916.1         ------------------------------------------------------------
+NR_125870.1         TGCTCTGCTCTTCCCTCCCTCCTCCTCCCTCCTCCCGCGTTCCTCCTCCTCCCCCCTCCT
+NM_001284458.1      ------------------------------------------------------------
+                                                                                
+
+NR_037916.1         ------------------------------------------------------------
+NR_125870.1         TCCTTCTCCCCCCCTTCTCCTCCCTCCCTCCTTTTCCTTCCCTCCATTTCTTCCCCCTCC
+NM_001284458.1      ------------------------------------------------------------
+                                                                                
+
+NR_037916.1         -------------------------GCTGGG--GCCAAGCCGCA---GAGCGGA-GTTGG
+NR_125870.1         CTTCCGCCTGGGCTAGCTCTGCCTAGTTGGGCGGGAAGGCCGCGCCCGCCCGCCCGCGGG
+NM_001284458.1      ------------------------------------------------------------
+                                                                                
+
+NR_037916.1         CATTTCCAGATTGGGGCTCGGGCCGCGCCTCCTCCGGGACCCTCC------CCTTGGACC
+NR_125870.1         GAATGCTGGACTGGGCTCCCTATCCAGGCTCCCCGGGATTGCCCCTGGAAGCCGTGGGTA
+NM_001284458.1      ------------------------------------------------------------
+                                                                                
+
+NR_037916.1         GAGCCGATCGCCGCGGGGCAGTTCGGGCCGGCTGTCCT---------GGCGC----GGTG
+NR_125870.1         GGGGGGCTGGCTTCAAGCC--TTCGGGTCAGCCTCCTTAAACTTCGTGACACCTAAGGTG
+NM_001284458.1      ------------------------------------------------------------
+                                                                                
+
+NR_037916.1         AAGGTGATAAAGTAAAGTGCTTTCACTGTGGAGGAGGGCTAACTGATTGGAAGCCCAGTG
+NR_125870.1         AAGGCGATAAAGTGAAGTGCTTTCACTGTGGAGGAGGGCTCACGGATTGGAAGCCAAGTG
+NM_001284458.1      -------------------------------------------------------AAGAG
+                                                                            ** *
+
+NR_037916.1         AAGACCCTTGGGAACAACATGCTAAATGGTATCCAGGGTGCAAATATCTGTTAG-AACAG
+NR_125870.1         AAGACCCTTGGGAACAGCATGCGAAGTGGTACCCAGGGTGCAAATACCTATTGG-ATGAG
+NM_001284458.1      AAGATGACTTTTAACAGTTT-TGAAGGAG---CTAAAACTTGTGTACCTGCAGGCATCAA
+                    ****    *   ****   *   **   *   * *         ** **    * *  * 
+
+NR_037916.1         AAGGGAC-AAGAATATATAAACAATATTCATTTAACTCATTCACTTGAGGAGTGTCTGGT
+NR_125870.1         AAGGGGC-AAGAATATATAAATAATATTCATTTAACCCATTCACTTGAGGAATCTTTGGG
+NM_001284458.1      TAAGGATGAAGAATTTGTAGAAGAGTTTAATAGATTAAAAACTTTTGCTAATTTTCCAAG
+                     * **   ****** * ** *  *  ** **  *    *  *  ***   * * *     
+
+NR_037916.1         AAGAACTACTGAGAAAACACCATCACTAACTAGAAGAATTGATGATACCATCTTCCAAAA
+NR_125870.1         AAGAACTGCTGAAAAAACACCATCGCTAACTAAAAAAATCGATGATACCATCTTCCAGAA
+NM_001284458.1      TAGCAGTCCTGTTTCAGCATCAACGTTAGC---ACGAGCTGGT---------TTTCTGTA
+                     ** * * ***    * ** ** *  ** *   *  *   * *         ** *   *
+
+NR_037916.1         TCCTATGGTACAAGAAGCTATACGAATGGGGTTCAGTTTCAAGGACATTAAGAAAATAAT
+NR_125870.1         TCCTATGGTGCAAGAAGCTATACGAATGGGATTTAGCTTCAAGGACATTAAGAAAACAAT
+NM_001284458.1      TACTGGTGAAGGAGATACTGTGCG---GTGCTTTAGTTGTCATG-CATCAATAGATAGAT
+                    * **   *    ***  ** * **   * * ** ** *   * * *** ** * *   **
+
+NR_037916.1         GG-AGGAAAAAATTCAGATATCTGGGAGCAACTATAAATCACTTGAGGTTCTGGTTGCAG
+NR_125870.1         GG-AAGAAAAAATCCAAACATCCGGGAGCAGCTATCTATCACTTGAGGTCCTGATTGCAG
+NM_001284458.1      GGCAATATGGAGACTCAGCAGTTGGAAGACACAGGAAAGTATCC-----CCAAATTGCAG
+                    ** *  *   *        *   ** **   *     *  *         *   ******
+
+NR_037916.1         ATCTAGTGAATGCTCAGAAA--GACAGTATGCAAGATGAGTCAAGTCAGACTTCATTACA
+NR_125870.1         ATCTTGTGAGTGCTCAGAAA--GATAATACGGAGGATGAGTCAAGTCAAACTTCATTGCA
+NM_001284458.1      ATTTATCAATGGCTTTTATTTTGAAAACACTGCTGCACAACCTA--CAAATCCAGGTATC
+                    ** *    *  ***   *    ** *  *     *   *  * *  ** *      *   
+
+NR_037916.1         GAAAGAGATTAGTACTGAAGAGCAGCTAAGGCGCCTGCAAGAGGAGAAGCTTTGCAAAAT
+NR_125870.1         GAAAGACATTAGTACTGAAGAGCAGCTAAGGCGCCTACAAGAGGAGAAGCTTTGCAAAAT
+NM_001284458.1      CAAAATGGTCAATAT---AATGCAGA-AAACTATCTGAGAAACAGAGATCATT------T
+                     ***    * * **    *  ****  **     **   * *     * * **      *
+
+NR_037916.1         CTGTATGGATAGAAATATTGCTA-TCGTTTTTGTTCCTTGTGGACATCTAGTCAC-TTGT
+NR_125870.1         CTGTATGGATAGAAATATTGCTA-TCGTTTTTGTTCCTTGTGGACATCTGGTCAC-TTGT
+NM_001284458.1      TGTTTTAGACAGACCATCTGAGACTCATGCAGATTATCTTTTGAGAACTGGACAGGTCGT
+                       * * ** ***     **  * ** *     **   * * ** * ** * **  * **
+
+NR_037916.1         AAACAATGTGCTGAAGCAGTTGACAAGTGTCCCATGTGCTACACAGTCATTACTTTCAAG
+NR_125870.1         AAACAGTGTGCAGAAGCAGTTGACAAATGTCCCATGTGCTACACCGTCATTACGTTCAAG
+NM_001284458.1      AGATA-TATCAGACACCACATACCCGGAGAACCCTGCCATGTATAGTGAAGAAGCTAGAT
+                    * * * * *     * **  *  *    *  ** **   *  *  ** *  *   *  * 
+
+NR_037916.1         CAAAAAATTTTTATGTCTTAATCTAACTCTATAGTAGGCATGTTATGTTGTTCTTATTAC
+NR_125870.1         CAAAAAATTTTTATGTCTTAGTGGGGCACCA-------CATGTTATG---TTCTTCTTGC
+NM_001284458.1      TAAA-----CTCATTTCAGAACTGGCC------------AGACTATG---TCCACTTGAC
+                     ***      * ** **  *      *            *   ****   * *   *  *
+
+NR_037916.1         CCTGATTGAATGTGTGATGTGAACTGACTTTAAGTAATCAGGATTGAATTCCATTAGCAT
+NR_125870.1         TCTAATTGAATGTGTGATGGGAGCGAACTTTAAGTAATCTGCATTGCATTCCATTAGCAT
+NM_001284458.1      CCCAA--GAGAGTTAGCTAGTGCTGGATTCTACTACACAGGTATTGACGATCAAGTGCAG
+                     *  *  **  **  * *        * * **    *   * ****     **   *** 
+
+NR_037916.1         TTGCTA---CCAAGTAGGAAAAAAAATGTACATGGCAGTGTTTTAGTTGGCAATATAATC
+NR_125870.1         CTGCTGTTTCCAAATGG--AGACCAATGCTAACAGCACTGTTTCCGTC-------TAAAC
+NM_001284458.1      -TGCTTTTGTTGTGGTGGAAAACTGAAAAATTGGGAACCGTGTGA---------------
+                     ****           *  * *   *        * *  ** *                 
+
+NR_037916.1         TTTGAATTTCTTGATTTTTCAGGGTATTAGCTGTATTATCCATTTTTTTTACTGTTATTT
+NR_125870.1         ATTCAATTTCTGGATCTTTCGAGTTATCAGCTGTATCATTTAGCCAGTGT---TTTACTC
+NM_001284458.1      ---TAATGCATGG-----TCAGAACACAGGCGACACTTTCCTAATTGCTTCTTTGTTCTG
+                        ***   * *     **     *   **   *   *          *     *  * 
+
+NR_037916.1         AATTGAAACCATAGACTAAGAATAAGAAGCATCATACTATAACTGAACACAATGTGTATT
+NR_125870.1         GATTGAAACCTTAGACAGAGAAG---------CATTTTATAGCTTTTCACA-TGTATATT
+NM_001284458.1      GGCCGGAATGTTAATATTCGAAG--------------TGAATCTGATGTTG-CGAGTACT
+                        * **   **      ***               *  * **         *  ** *
+
+NR_037916.1         CATAGTATACTGATTTAATTTCTAAGTGTA----AGTGAATTAATCATCTGGATTTTTTA
+NR_125870.1         GGTAGTACACTGACTTGATTTCTATATGTA----AGTGAATTCATCACCTGCATGTTTCA
+NM_001284458.1      GATAGGAA--CGTCCCAAATTCAACAAGTATTCCAGAAAATCCAGCCATGGCAGATTATG
+                      *** *    *     * *** *   ***    **  ***  * *    * *  **   
+
+NR_037916.1         TTCTTTTCAGATAGGCTTAACAAATGGAGCTTTCTGTATATAAATGTGGAGATTAGAGTT
+NR_125870.1         TGCCTTTTGCATAAGCTTAACAAATGGAGTGTTCTGTATA--AGCATGGAGATGTGATGG
+NM_001284458.1      AAGCACGGATCGTTACTTTTCGGATGTGGATGTGTTCA-ATTAACAAGGAG--CAACTTG
+                                   ***  *  ***  *   * *  * *  *    ****         
+
+NR_037916.1         AATCTCCCCAATCACAT-AATTTGTTTTGTGTGAAAAAGGAATAAATTGTTCCATGCTGG
+NR_125870.1         AATCTGCCCAATGACTTTAATTGGCTTATTGTAAACACGGAAAGAACTGCCCCACGCTGC
+NM_001284458.1      CAAGAGCTGGATTTTATTCTTTAGGGGATGGTGATAAAGTAAAATGCT--TTCACTGTGG
+                     *    *   **    *   ** *      ** *  * * **     *    **   ** 
+
+NR_037916.1         TGGAAAGATAGAGATTGTTTTTAGAGGTTGGTTGTTGTGTTTTAGGATTC---TGTCCAT
+NR_125870.1         TGGGAGGATAAAGATTGTTTT-AGATGCTCACTTCTGTGTTTTAGGATTC---TGCCCAT
+NM_001284458.1      AGGAGGACTA---ACTGATT--GGAAGCCCAGTGAAGACCCTTGGGAACAACATGCTAAG
+                     **     **   * ** **   ** *     *   *    ** ***      **   * 
+
+NR_037916.1         TTTCTTTTAAAGTTATAAACACG--TACTTGTGC--GAATTATTTTTTTAAAGTGATTT-
+NR_125870.1         TTACTTGGAATTTATTGGAGTTA--TAAATGTACTTATATGAGTATTTTTAAGTGATTTC
+NM_001284458.1      TGGTTTCCAGGGTGTAAATATCTGTTAGAAGAGAAGGGACAAGAATATATAAACAATAT-
+                    *   **  *   *            **   *       *  *   * *  **   ** * 
+
+NR_037916.1         GCCATTTTTGAAAGCGTATTTAATGATAGAATACTATCGAGCCAACATGTACTGACATGG
+NR_125870.1         GTCATCTCCTAAAAGATATTGAATGGTAGACTACCATCTAACCAGCATGTACTGACATGG
+NM_001284458.1      -TCATTT-----AACCCATTCAGTGCTAAGA-ACTGCTGAAAGAACACGGTCATTAACTG
+                      *** *     *    *** * ** **    **     *   * ** *  *    *  *
+
+NR_037916.1         AAAGATGTCAAAGATAT-GTTAAGTGTAAAATGCAA-GTGGCAAAACACTATGTATAGTC
+NR_125870.1         AAAGGCAACACAGATATAGTTAAGTGTAAAATACAA-ATGGCAAAACACTGTATCTAGTT
+NM_001284458.1      AAAGA-ATTGAGGATGCCATCT--TCCAAAATCCTATGTTACAAGAAGCTATAC------
+                    ****        ***    *    *  ***** * *  *  *** *  ** *        
+
+NR_037916.1         TGAGCCAGATCAAAGTATGTATGTTTTTAATATGCATAGAACAAAA-GATTTGGAAAGAT
+NR_125870.1         GGAGCCAAATCAGCTTGTGTGTATTTTGTATCTGTACAGGACAAAAAGGTTTGAAAATAT
+NM_001284458.1      -GAATGGGATTCAGTTTCAAGGACATTAAGAAAATAATGGAGGAAAAAATTCAGACATCT
+                     **     **     *         **        *  * *  ***   **   * *  *
+
+NR_037916.1         A--TACACCAAACTGTTAAATGTGGTTTCTCTTCGGGGAGGGGGGGATTGGGGGAGGGGC
+NR_125870.1         A--AGTATCACACTCTTAAATGTATTTTTTCTTCAGGGGG--------TGGGGGGTGGGT
+NM_001284458.1      GGGAGCAACTATGTATCACTTGAGGCTCTGGTTTCAGATC--------TAGTGAGTG---
+                          * *    * * *  **    *    **   *           * * *   *   
+
+NR_037916.1         CCCAGAGGGGTTTTATAGGGGCCTTTTCACTTTCTACTTTTTTCATTTTGTTCTGTTCGA
+NR_125870.1         CTTAGAGGGGCTT-ATAGAGCCCTT--CACTTTAT---TTTTTCATTTTTTTCTGTTTAA
+NM_001284458.1      CTCAGAAAGACCATACACAAGATGAATCAAGCCAGA----CTTCATTGCAAAAAGAGATT
+                    *  ***  *     * *          **            ******       *     
+
+NR_037916.1         ATTTTTTATAAGTATGTATTACTTTTGTAATCAGAATT-TTTAGAAAGTATTTTGCTGAT
+NR_125870.1         AGGTTTTATAAGTATGTATTACTTTTATAATCAGAGTT-CTTAGTAAATATGTTGCTGAT
+NM_001284458.1      AGTGCTGAAGAGCAGCTCAGACTCCTGCAAGAGGAAAAGCTTTGCAAAATCTGTATGGAT
+                    *    * *  ** *  *   ***  *  **   **     ** * **      *   ***
+
+NR_037916.1         TTAAAGGCTTAGGCATGTTCAAACGCCTGCAAAACTACTTATCACTCAGCTTTAGTTTTT
+NR_125870.1         TTAAAGGCTTAGGCATGTTCAAACGTCTGCAAAACTACTTATCGCTCAGTTTTAGTTTTT
+NM_001284458.1      AGAAATATTGCTGTGGTTTTCATTCCTTGCGGA-CATCTGGTCACTTGTAAACAATGTGC
+                      ***   *   *    **  *     ***  * *  **  ** **       * * *  
+
+NR_037916.1         CTAATCCAAGAAGGCAGGGCAGTTAACCTTTTTGGTGCCAATGTGAAATGTAAATGATTT
+NR_125870.1         CTAATCCAGGAAGGCAGGCCAGTTAACTTTTCTGGTGCCAATGTGAACTTTAAATGTTTT
+NM_001284458.1      TGAAGCAGTTGACAAATGTCCCATGTGCTATACAGTCATTACTTTCAAGCAAAAAATTTT
+                      ** *     *   * * *   *    * *   **    *  *  *    ***   ***
+
+NR_037916.1         TATGTTTTT--CCTGCTTTGTGGATGAAAAATATTTCTGAGTGGTAGTTTTTTGACAGGT
+NR_125870.1         TAT--TTTA--CCTGCTTTGTGGATGAAAAATATTTCTGAGTGGTAGTTTTCTGACAGGT
+NM_001284458.1      TATGTCTTAATCTCACTCTACAG-------------------------------------
+                    ***   **   *   ** *   *                                     
+
+NR_037916.1         AGACCATGTCTT---ATCTTGTTTCAAAATAAGTATTTCTGATTTTGTAAAATGAAATAT
+NR_125870.1         AGATCATGTCTTTTTATCTTGTTTCAAAATAACTATTTCTGATTTTGTAAAATGAAATAT
+NM_001284458.1      ------------------------------------------------------------
+                                                                                
+
+NR_037916.1         AAAATATGTCTCAGATCTTCCAATTAATTAGTAAGGATTCATCCTTAATCCTTGCTAGTT
+NR_125870.1         AAAATATGTCTCAGATCTTCCAATTAATTAGTAAGGATTCACCCTTAATCCTTGCTAGTT
+NM_001284458.1      ------------------------------------------------------------
+                                                                                
+
+NR_037916.1         TAAGCCTGCCTAAGTCACTTTACTAAAAGATCTTTGTTAACTCAGTATTTTAAACATCTG
+NR_125870.1         GAAGCCTGCCTAAGTCACTTTACTAAAAGATCTTTGTTAACCCAGTATTGTAACCATCTG
+NM_001284458.1      ------------------------------------------------------------
+                                                                                
+
+NR_037916.1         TCAGCTTATGTAGGTAAAAGTAGAAGCATGTTTGTACACTGCTTGTAGTTATAGTGACAG
+NR_125870.1         TCCGCTTACGTAGGTAAATGTAGACGCCTGGT-GTATATGGCTTGTAGTTTTAGTGTTGG
+NM_001284458.1      ------------------------------------------------------------
+                                                                                
+
+NR_037916.1         CTTTCCATGTTGAGATTCTC-----ATATCATCTTGTATCTTA-AAGTTTCATGTGAGTT
+NR_125870.1         CTCTCCGTGTTGAGATTCTTTCTCAGTGTCATTCTGTGTCCTACAAGTTTCATGTAGGTT
+NM_001284458.1      ------------------------------------------------------------
+                                                                                
+
+NR_037916.1         TTTACCGTTAGGATGATTAAGATGTATATAGGACAAAATGTTAAGTCTTTC----CTCTA
+NR_125870.1         TCGAT-GTTAGGATGGTTAAGATGTATATAGTACAAAATGTTCAGTCTTTGATTGTTTTA
+NM_001284458.1      ------------------------------------------------------------
+                                                                                
+
+NR_037916.1         CCTACATTTGTTTTCTTGGCTAGTAATAGTAGTAGATACTTCTGAAATAAATGTTCTCTC
+NR_125870.1         TGTTTGTTTGTTTTCATGACTAGTAATGGTAGTGGATACTTT----AAAAATATTTTCTG
+NM_001284458.1      ------------------------------------------------------------
+                                                                                
+
+NR_037916.1         AAGATCCTTAAAACCTCTTGGAAATTATAAAAATATTGGCAAGAAAAGAAGAATAGTTGT
+NR_125870.1         AAGATCCTTAAAACC--TTGGAAATTGTAACA-TACTG--------AGAAGAGTGGTTGT
+NM_001284458.1      ------------------------------------------------------------
+                                                                                
+
+NR_037916.1         TTAAATATTTTTTAAAAAACACTTGAATAAGAATCAGTAGGGTATAAACTAGAAGTTTAA
+NR_125870.1         TTGAATATTTTTAACAA----CTTGTATAAG--TCAATATGAATACAATCAAAAGCT--A
+NM_001284458.1      ------------------------------------------------------------
+                                                                                
+
+NR_037916.1         AAATGCTTCATAGAACGTCCAGGGTTTACATTACAAGATTCTCACAACAAACCTATTGTA
+NR_125870.1         AAGTGCTTCATAGAACA--CGGGATTTACCTTAAGTAATTATCATGAGAGACCTCTTGTA
+NM_001284458.1      ------------------------------------------------------------
+                                                                                
+
+NR_037916.1         GAGGTGAGTAAGGCATGTTACTACAGAGGAAAGTTTGAGAGTAAAACTGTAAAAAATTAT
+NR_125870.1         AAGACTGGTC---TATTTTACTACAGAGAACAGTTTGAGAGTGAAACTGTTACAATTTAG
+NM_001284458.1      ------------------------------------------------------------
+                                                                                
+
+NR_037916.1         A-TTTTTGTTGTACTTTCTAAGAGAAAGAGTATTGTTATGTTCTCCTAACTTCTGTTGAT
+NR_125870.1         ACTTTTTGTTGTATTTTCTAAGAGAAAGAGTATTGTTAGGTTCTCCTAACCTCTGTTGAC
+NM_001284458.1      ------------------------------------------------------------
+                                                                                
+
+NR_037916.1         TACTACTTTAAGTGATATTCATTTAAAACATTGCAAATTTATTTTATTTATTTAATTTTC
+NR_125870.1         TACTATGGTAAGTGATGTTATTTTA----ATTGCAAATTTA-------------------
+NM_001284458.1      ------------------------------------------------------------
+                                                                                
+
+NR_037916.1         TTTTTGAGATGGAGTCTTGCTTGTCACCCAGGCTGGAGTGCAGTGGAGTGATCTCTGCTC
+NR_125870.1         -------AATAGAAAC------------------------CAACAGAAT-----------
+NM_001284458.1      ------------------------------------------------------------
+                                                                                
+
+NR_037916.1         ACTGCAACCTCCGCCTTCTGGGTTCAAGCGATTCTCGTGCCTCAGCTTCCTGAGTAGCTG
+NR_125870.1         --------------------------------------------------TAAGTAACTG
+NM_001284458.1      ------------------------------------------------------------
+                                                                                
+
+NR_037916.1         GAATTACAGGCAGGTGCCACCATGCCCGACTAATTTTTTTTTATTTTTAGTAGAGACGGG
+NR_125870.1         ----------------------------ACTGTCTCTCTCTCTCTCT-------------
+NM_001284458.1      ------------------------------------------------------------
+                                                                                
+
+NR_037916.1         GTTTCACCATGTTGGCCAGGCTGGTATCAAACTCCTGACCTCAAGAGATCCACTCGCCTT
+NR_125870.1         ----------------------------------------------------CTCTCTCT
+NM_001284458.1      ------------------------------------------------------------
+                                                                                
+
+NR_037916.1         GCCCTCCCAAAGTGCTGGGATTACAGGCTTGAGCCACCACGCCCGGCTAAAACATTGCAA
+NR_125870.1         GTCTTCTT----------------------------------------------------
+NM_001284458.1      ------------------------------------------------------------
+                                                                                
+
+NR_037916.1         ATTTAAATGAGAGTTTTAAAAATTAAATAATGACTGCCCTGTTTCTGTTTTAGTATGTAA
+NR_125870.1         -----------------------------------------------------CATGAAA
+NM_001284458.1      ------------------------------------------------------------
+                                                                                
+
+NR_037916.1         ATCCTCAGTTCTTCACCTTTGCACTGTCTGCCACTTAG-TTTGGTTATATAGTCATTAAC
+NR_125870.1         ATCCTTAGTTCTGTA------TACTGCCTTCTGCTTAGATTTAGTTATATGATCATTAGG
+NM_001284458.1      ------------------------------------------------------------
+                                                                                
+
+NR_037916.1         TTGAATTTGGTCTGTATAGTCTAGACTTTAAATTTAAAGTTTTCTACAAGGGGAGAAAAG
+NR_125870.1         TTACATTTGATCTAAGTTGACTAAGATTTCAATTTCAATTTATATTTCAAGCATTCTGCC
+NM_001284458.1      ------------------------------------------------------------
+                                                                                
+
+NR_037916.1         TGTTAAAATTTTTAAAATATGTTTTCCAGGACACTTCACTTCCAAGTCAGGTAGGTAGTT
+NR_125870.1         AGGGAATAGTTTTAAAA-ATTGTTTCCAAGGCACTTCAGGTACAAGTCATATAGGTAGTT
+NM_001284458.1      ------------------------------------------------------------
+                                                                                
+
+NR_037916.1         C----AATCTAGTTGTTAGCCAAGGACTCAAGGACTGAATTGTTTTAACATAAGGCTTTT
+NR_125870.1         TGTTTAATCTAGTCCTTAGCCTAGGACTCAAGGACTGAAT-GTTTTCAAATAACACTTTT
+NM_001284458.1      ------------------------------------------------------------
+                                                                                
+
+NR_037916.1         CCTGTTCTGGGAGCCGCACTTCATTAAAATTCTTCTAAAACTTGTATGTTTAGAGTTAAG
+NR_125870.1         CTTGTTCTCAGAGCCTCAGTTCATTAAAACTCTTTTAAAACCTGTGTGCTGAGAGTTAAG
+NM_001284458.1      ------------------------------------------------------------
+                                                                                
+
+NR_037916.1         CAAGACTTTTTTTCTTCCTCTCCATGAGTTGTGAAATTTAATGCACAACGCTGATGTGGC
+NR_125870.1         CAAGACCTCTTTTCTTG-TCTTCATGAGTTGCGAAATTGAATTCATGGAGCTGATGTGGC
+NM_001284458.1      ------------------------------------------------------------
+                                                                                
+
+NR_037916.1         TAACAAGTTTATTTTAAGAATTGTTTAGAAA-TGCTGTTGCTTCAGGTTCTTAAAATCAC
+NR_125870.1         TAACAAGTTTATTTTAGGAATTGTTTAGAAAATGCTGTTGCTTCGGGTTCTTAAAATCAC
+NM_001284458.1      ------------------------------------------------------------
+                                                                                
+
+NR_037916.1         TCAGCACTCCAACTTCTAATCAAATTTTTGGAGACTTAACAGCATTTGTCTGTGTTTGAA
+NR_125870.1         --AGCACTCCAACT-CTAATCAAATTATTGGAGACTTAGCAGAGCTGGTCTGAAATCACA
+NM_001284458.1      ------------------------------------------------------------
+                                                                                
+
+NR_037916.1         CTATAAAAA-----GCACCGGATCTTTTCCA-TCTAATTCCGCAAAAATTGATCATTTGC
+NR_125870.1         CTAAAAAAAAAAAGGTACTGGATCCTTTCCAGTATGGTTGTGTAAAAAATGGTCACTCGG
+NM_001284458.1      ------------------------------------------------------------
+                                                                                
+
+NR_037916.1         AAAGTCAAAACTATAGCCATATCCAAATCTTTTCCCCCTCCCAAGAGTTCTCAGTGTCTA
+NR_125870.1         AAGGTCACAGA-ATAACCGGCTCTGAATCA----CCACCCCTGAGAGAGTTCAGTGTCTG
+NM_001284458.1      ------------------------------------------------------------
+                                                                                
+
+NR_037916.1         CATGTAGACTATTCCTTTTCTGTATAAAGTTCACTCTAGGATTTC-AAGTCACCACTTAT
+NR_125870.1         CGTGCTGA-TGGTCTTTTGCTGTATAAAGTTCATTCTAGAATTTTGAAGTAACCACCCGT
+NM_001284458.1      ------------------------------------------------------------
+                                                                                
+
+NR_037916.1         TTTAC---ATTTTAGTCATGCAAAGATTCAAGTAGTTTTGCAATAAGTACTTATCTTTAT
+NR_125870.1         TTTACTACATATTAGTCATGTGAATTTTGAAGTTATTTTGTAATAGTTACTTTCATTTGT
+NM_001284458.1      ------------------------------------------------------------
+                                                                                
+
+NR_037916.1         TTGTAATAATTTAGTCTGCTGATCAAAAGCATTGTCTTAATTTTTGAGAACTGGTTTTAG
+NR_125870.1         T-------ATTTACTGTGTTGATCAAGA------------TGTGTGTGAGT---GTTTAG
+NM_001284458.1      ------------------------------------------------------------
+                                                                                
+
+NR_037916.1         CATTTACAAACTAAATTCCAGTTAATTAATTAATAGCTTTATATTGCCTTTCCTGCTACA
+NR_125870.1         CATTTAT----TAAA-------------------------GTATTGTCTTTCCTCCTAGA
+NM_001284458.1      ------------------------------------------------------------
+                                                                                
+
+NR_037916.1         TTTGGTTTTTTCCCCTGTCCCTTTGATTACGGGCTAAGGTAGGGTAGAGTGGGTGTAGTG
+NR_125870.1         -------CTTTTGCCTCTTCCTGTAGTTAGGGGTAGAGGTGAGGT-GAGTG--------G
+NM_001284458.1      ------------------------------------------------------------
+                                                                                
+
+NR_037916.1         AGTGTATATAATGTGATTTGGCCCTGTGTATTATGATATTTTGTTATTTTTGTTGTTATA
+NR_125870.1         AGTGACTACAATGTGATTCGC-----TGGGGTAGGACAGTTTGTTGTCTTGTTAGTCACA
+NM_001284458.1      ------------------------------------------------------------
+                                                                                
+
+NR_037916.1         TTATTTACATTTCAGTAGTTGTTTTTTGTGTTTCCATTTTAGTGGATAAAATTTGTATTT
+NR_125870.1         GTGT-------------GTTGCTCTGT---TTTTTATTTTAGT----AAGATTTATATTT
+NM_001284458.1      ------------------------------------------------------------
+                                                                                
+
+NR_037916.1         TGAACTAT--GAATGGAGACTACCGCCCCAGCATTAGTTTCACATGATATACCCTTTAAA
+NR_125870.1         TGAGCTCTCTGAATGGAAAGTGCCACTGCAACCTTAGCTGCATGCATTGTTCCCATTAGA
+NM_001284458.1      ------------------------------------------------------------
+                                                                                
+
+NR_037916.1         CCCGAATCATTGTTTTATTTCCTGATTACACAGGTGTTGAATGGGGAAAGGGGCTAGTAT
+NR_125870.1         CCTAAGTCTTC--CTGGACTTCTGAGTCCCCAGATACTGGATAAAGGAAGAGGAGAG---
+NM_001284458.1      ------------------------------------------------------------
+                                                                                
+
+NR_037916.1         ATCAGTAGGATATACTATGGGATGTATATATATCATTGCTGTTAGAGAAATGAAATAAAA
+NR_125870.1         ----ATGGAGTA-----------GCCTGTCTGTCACTGCTATGAGAGAA--GCAAGAAAG
+NM_001284458.1      ------------------------------------------------------------
+                                                                                
+
+NR_037916.1         TGGGGCTGGGCTCAGTGGCTCACGCCTGTAATCCCAGCACTTTGGGAGGCTGAGGCAGGT
+NR_125870.1         TGGGTAGAGA---AATACTTCACATTT-TAGTCACATCTTCTCTTTTTAAAAAGGTAGCC
+NM_001284458.1      ------------------------------------------------------------
+                                                                                
+
+NR_037916.1         GGATCA-CGAGGTCAGGAGATCGAGACCATCCTGGCTAACACGGTGAAACCCCGTCTCTA
+NR_125870.1         --ATCAGTGAAGGAAAGAACTAGTCAAAAATAGGCTTGACAACCTGAATTCAGATCCCCA
+NM_001284458.1      ------------------------------------------------------------
+                                                                                
+
+NR_037916.1         CTAAAAAACAGAAAATTAGCCGGG-CGTGGT-GGCGGGCGCCTGTAGTCCCAGCTACTCG
+NR_125870.1         G-AACGGGCATAAAAGCAGCCAGGTCATGGTTAGTGCACTCCTTTAATCCCAGC-ATTTG
+NM_001284458.1      ------------------------------------------------------------
+                                                                                
+
+NR_037916.1         GGAGGCTGAGGCAGGAGAATGGTGTGAACCCGGGAGGCAGAGCTTGCAGTGAGCCGAGAT
+NR_125870.1         GGAGGCAGGGGTAGACATAT-----------------CTGGGTTTGAAGCCAGCCT-GAT
+NM_001284458.1      ------------------------------------------------------------
+                                                                                
+
+NR_037916.1         CTCGCCACTGCACTCCAGCCTGGGCAACAGAGCAAGACTCTGTCTCAAAAAAAAAAAAAA
+NR_125870.1         CTACAGAGTGAGTTCCAG-------GACAGGG---AACCCTGTCTTATTCATAAAAGAAA
+NM_001284458.1      ------------------------------------------------------------
+                                                                                
+
+NR_037916.1         AAGAAATAAGAAAATGGGAAGCAATATTTGACATAGTTCTTTTTAGTCAAATCTACTTGT
+NR_125870.1         ACAAAACAAACAAAAAGCTGAGCGCACTAGCCCAAGCACCTGTAATCCCAGAATGCCTAC
+NM_001284458.1      ------------------------------------------------------------
+                                                                                
+
+NR_037916.1         TAAAAAAAGGGTAGCAGTTTATTCATCTGTGAAAGGAAAATAATACTTATCTTACAAGGT
+NR_125870.1         -ATGAAACAGGAAGTAGCT--------------AGGAGAATGCCCCAAAGCTCATGGTCA
+NM_001284458.1      ------------------------------------------------------------
+                                                                                
+
+NR_037916.1         TGCAAGAGCTCAAGGAGACCATGTATGTAAAGTTCCTGCTGTAAATATGAACTCCCATCC
+NR_125870.1         GTTAATGGCTTATG-----TATTAATGAAGAGGCACCATGGTAAACA--AAGTGGGAAGG
+NM_001284458.1      ------------------------------------------------------------
+                                                                                
+
+NR_037916.1         TAATACCCTTTTACCTCTCTGTGGGTTTGTCTTGACCTGGAAATTTGGGCTAAAACTTAG
+NR_125870.1         TGAGAGCCCACCAACA-TCCACAAGTTATCTGCTGCCTCCACACATG-------------
+NM_001284458.1      ------------------------------------------------------------
+                                                                                
+
+NR_037916.1         AAAAAATTCTTACATGATAACTCAGTGATGCTTACTCATAGTTTTTGGTGTTTCTCATAG
+NR_125870.1         ---------TAACATGGCAGGTAACCA---CTTACACCCAGA-----------CACATAC
+NM_001284458.1      ------------------------------------------------------------
+                                                                                
+
+NR_037916.1         ATAAGATATAAATCAGCTGGGCGCGGTGGCTCATGCCTGTAATCCCAGCACTTTGGGAGG
+NR_125870.1         ACAAAAGAGAGAAGA-CCAAGAGTGTTAACACAAG--AACATCTTATATACTCTTAAGTG
+NM_001284458.1      ------------------------------------------------------------
+                                                                                
+
+NR_037916.1         CCGAGGCGGGCAGATCACCTGAGGTCGGGAGGTCGAGACCAGCCTGACCAACATGGAGAA
+NR_125870.1         TTAACTC-------TCATCCTACAACTTAGAATCCTCCATGGCTTTGTCTTGATGGAAGA
+NM_001284458.1      ------------------------------------------------------------
+                                                                                
+
+NR_037916.1         ACCCCGTCTCTACTAAAAATACAAAATTAGCTGGGCGTGGTGGCTCATGCCTGTAATCCC
+NR_125870.1         TCTTAGACT------AAAGCTTAAAAGAGGCCCAGAACTATTACTCA-GTTAAGAGTACT
+NM_001284458.1      ------------------------------------------------------------
+                                                                                
+
+NR_037916.1         AGCTACTTGGGAGGCTGAGGCAGGAGAATCGCTTGAACCCAGGAGGCGGAGGTTGTGGTG
+NR_125870.1         TGCTGCTTT---TTCAGAGGACTTAGGTTCAGTT---CCCAGCACCCACATG----GACA
+NM_001284458.1      ------------------------------------------------------------
+                                                                                
+
+NR_037916.1         AGCGAAGATCGTGCCATTGCACTCCAGCCTGGGCAACAAGAGCAAAACTCTGTCTCAAAA
+NR_125870.1         AAGACACATGTAGCTCTGGTGCCCTCTTTTGGCCTTCAGGGG------------------
+NM_001284458.1      ------------------------------------------------------------
+                                                                                
+
+NR_037916.1         AAAAAAAAAGATATAAATCACAATAAATAAATAGGTCAATACAAATGTTAGCCAGGCGTG
+NR_125870.1         -----------------------TGCATGCATGTGTGTATACATACAC-AGTCATACACA
+NM_001284458.1      ------------------------------------------------------------
+                                                                                
+
+NR_037916.1         GTGGCACATGCCCATAGTCGCAGCTACTCTGGAGGCAGAGGCAGGAGGATCACTTGAGCC
+NR_125870.1         AGTACACAT----AAAATAAAAGTAATCTTTAAAGCTTAAAT----GAAACTCTTTATGT
+NM_001284458.1      ------------------------------------------------------------
+                                                                                
+
+NR_037916.1         CATGAATTTGAGGCAGCAGTGAGCTATGATTGTGCCACTGTACTCCAGTCTGGGTGACAG
+NR_125870.1         TA--ACTTTTACTCACTA-----TTAT--TTGTTTCTCTGGATGC---TTCTTGTAACAA
+NM_001284458.1      ------------------------------------------------------------
+                                                                                
+
+NR_037916.1         AGTGAGACCCCATCTCTAAATAAATAGGTCAAACCCTTAAAAATATTTAAATT----CTT
+NR_125870.1         AGCTATAAATTGT-----AATAAATAGTTCAACCCTTTAAAAATATTTAAATTACCTTTT
+NM_001284458.1      ------------------------------------------------------------
+                                                                                
+
+NR_037916.1         AAAAAATTGAAAAGATTATTCTTCTCAAATTTAGTTGAGCTTTCT--AAGAGAAGCAATT
+NR_125870.1         CAAAAATTAGAGAAAGTATTCTTACTAAATTCAGTCGAATTTTTTCCAATAGAAACAGTC
+NM_001284458.1      ------------------------------------------------------------
+                                                                                
+
+NR_037916.1         GGCTTTTTCCCACTTCAATAATCATTTTCAGTTTGACTC--ATACAGTTAACACAATGTG
+NR_125870.1         AACTTATTACCATCTTAATA-----TTTTAGTTTGGCTCTGAAACATTTAGTGCAATGTA
+NM_001284458.1      ------------------------------------------------------------
+                                                                                
+
+NR_037916.1         AATTTCTTCCTCAGCATAACAGAGTTATAGAATGACAGGGCTGGAAGTGACCTTAGAGAG
+NR_125870.1         GATTTCTTCCTTA-TATAATAAAATCACTGACTATCAGAGCTAGAAATGACCTTAGAAAG
+NM_001284458.1      ------------------------------------------------------------
+                                                                                
+
+NR_037916.1         TATCCAGTTC----------------TTTCATTTTACAGGTGAGGCAACTGAGACTCAAA
+NR_125870.1         TCACTTATTCACACTACCACCACCACCTTCATTTTATTGTTGAGGCA------ACTTAAA
+NM_001284458.1      ------------------------------------------------------------
+                                                                                
+
+NR_037916.1         GGTGATGTAATTTGTGCAAAGAT-TATAGCTAATTAGTAGCAGAGCCCTGACTGGGA-CA
+NR_125870.1         GGAAAGGTGATTGGCCCGAAGCTATATAGCTGATTAGTGATAGATTCCTTACTGGAAGTC
+NM_001284458.1      ------------------------------------------------------------
+                                                                                
+
+NR_037916.1         TAGTTTGAAGGTGAAAAACTTCACCAAGCTACCTTTCTTGAAAGGTCCAAATGTTTATGT
+NR_125870.1         TCAGGTGTTTGTCAACT-CTTCATTCTATTACACTCTTATCAGGGCACAGTAAGTGGTGC
+NM_001284458.1      ------------------------------------------------------------
+                                                                                
+
+NR_037916.1         TTTCAACTACTCTTTCCACTGTACCATAACTTTCACTACATATTAAATGACACTTTATAA
+NR_125870.1         TTTGTAGT-----TTCTACAGTAAGACGGTTGCTGATACTT-TCAAATTAAACAATATGA
+NM_001284458.1      ------------------------------------------------------------
+                                                                                
+
+NR_037916.1         CTAATATAATAGGACAATCATCAATGCATATATAGCCAGCCCTTCATATCTGTGGGTTTT
+NR_125870.1         CAGTAATGCTTGAGTGGTAAAGTTCTCTTTTGGAGGCTGAAATTTGCAGATGTGAGTACA
+NM_001284458.1      ------------------------------------------------------------
+                                                                                
+
+NR_037916.1         GCATCCATGGATTCAACCAAGGAGGAATTGAAAACACTGAGAAAAAAAAAAAAGACCACA
+NR_125870.1         GC-TGTTTGGCATTTACTATGTGCTTAT--GTATTATTAATGAGCATTTAA--GATTACT
+NM_001284458.1      ------------------------------------------------------------
+                                                                                
+
+NR_037916.1         CAATAAAAAAAAAAAATACAAAATAATACAAAGAAA-AAGCCAAAATTGTCATACTGTTG
+NR_125870.1         CTGTAAGTATATTTTATCACTGTCTATACTTACCAACAAATTTGCATTTTGATGTAATAA
+NM_001284458.1      ------------------------------------------------------------
+                                                                                
+
+NR_037916.1         TTAAGCAACAGTATAACAACTATTTACATAGCATTAAGGTTGGTGCAAAAATGCAAAAAA
+NR_125870.1         T--GGCTTTCGTGTAATTTCTGTTT---TGGCATTTTTGTTA-TACTTTACCTGAAAAAA
+NM_001284458.1      ------------------------------------------------------------
+                                                                                
+
+NR_037916.1         AAAAAAAGCAATTATTTTTAAACCAACCTAATATATTGTATTAGGTATTAAAGTCATCTG
+NR_125870.1         AAAAAGACCAATTCTTTT----GTCATGTGTTGTACTATATT---TGTGAATATAATTT-
+NM_001284458.1      ------------------------------------------------------------
+                                                                                
+
+NR_037916.1         GACATGAATTAAAGTATATGATGCCAGCCTGGACAAAAGGCAAAACCCTGTCTCTACAAA
+NR_125870.1         --TATGACTC---GTTTATGGAAACTCCTTTATGGAATTGCT---TTCTG-CTCTATAAT
+NM_001284458.1      ------------------------------------------------------------
+                                                                                
+
+NR_037916.1         AAATACAAAAATTAGCTGGGCATGGTGGTGTGTGCCTGTAGTCCTGGCTACTCCGGAGCC
+NR_125870.1         CTGT-----CATTTGTTGTAGATTAAAGCTTATTTTTCTG----TGAATAAGACTTATTC
+NM_001284458.1      ------------------------------------------------------------
+                                                                                
+
+NR_037916.1         TGAGGTGGGAGGATCGCTTGAGTCTGGGAGGCAGAGGCTGCATTGAGCTATGATCATGGC
+NR_125870.1         AATAAAGCACTATTCTTTAAAATGTTAAAAAAAAAAAAAAAAA-----------------
+NM_001284458.1      ------------------------------------------------------------
+                                                                                
+
+NR_037916.1         ACTGCATTCCAGCCTGGGTGACAGTGCAAGACCTTGTCTCAGAATAAATAAAGTATGTGA
+NR_125870.1         ------------------------------------------------------------
+NM_001284458.1      ------------------------------------------------------------
+                                                                                
+
+NR_037916.1         TGAAGATGTGCATACATTATATGCAAATACTGTTTTTTTTTTTTTTAATTTAAACAGTCT
+NR_125870.1         ------------------------------------------------------------
+NM_001284458.1      ------------------------------------------------------------
+                                                                                
+
+NR_037916.1         CACTGTGTTGCCCAGGATGGAGTGCAATGGCACAATCTTGGCTCATGGCAAACTCTGCCT
+NR_125870.1         ------------------------------------------------------------
+NM_001284458.1      ------------------------------------------------------------
+                                                                                
+
+NR_037916.1         CGCAAGCAGCTGGGACTACAGGCATGCTCCACGGTGCCCAGTTAATTTTTTTTGTATTCT
+NR_125870.1         ------------------------------------------------------------
+NM_001284458.1      ------------------------------------------------------------
+                                                                                
+
+NR_037916.1         TAGTAGAGACAGGGTTTCACCATGTTGGCCAGGCTAGTCTTGAATTTCTGACCTCAAGTG
+NR_125870.1         ------------------------------------------------------------
+NM_001284458.1      ------------------------------------------------------------
+                                                                                
+
+NR_037916.1         ATTCATCTCCCAAAGTGCTGGGATTACAGGCGTGAGCCACCACGGCCGGCTAATTTTTGT
+NR_125870.1         ------------------------------------------------------------
+NM_001284458.1      ------------------------------------------------------------
+                                                                                
+
+NR_037916.1         ATTTTTTAGTAGTGACTGGTTTCGCGGTGTTGACCAGGCTGGTCTCGAACTCCTGATCTC
+NR_125870.1         ------------------------------------------------------------
+NM_001284458.1      ------------------------------------------------------------
+                                                                                
+
+NR_037916.1         AGGTGATCTGCCTGCCTCGGCCTCACAAAGTGCTGGGATTACAGGTGTGAACCACTGCTC
+NR_125870.1         ------------------------------------------------------------
+NM_001284458.1      ------------------------------------------------------------
+                                                                                
+
+NR_037916.1         CCGGCCTTGTGTGATTTTATCTAAGGGACTTAAGCGTCCTCAGGTCCTAGGGGGTCGTGA
+NR_125870.1         ------------------------------------------------------------
+NM_001284458.1      ------------------------------------------------------------
+                                                                                
+
+NR_037916.1         AACCAAAACCCCAGGGATAGCAAGGGACAATTGTATCTTCAAAGTAGACAAATGGCGCCG
+NR_125870.1         ------------------------------------------------------------
+NM_001284458.1      ------------------------------------------------------------
+                                                                                
+
+NR_037916.1         GGCACGGTGGCTCACGCCTGTAATCCCAGCAGTTTCCGAGGCTGAGGCAGGCGGCTCACC
+NR_125870.1         ------------------------------------------------------------
+NM_001284458.1      ------------------------------------------------------------
+                                                                                
+
+NR_037916.1         TGAGGTCAGGAGTTGGAGACCAGCCTGGCCAACATGCTGAAACCCTGTCTGTACAAAAAT
+NR_125870.1         ------------------------------------------------------------
+NM_001284458.1      ------------------------------------------------------------
+                                                                                
+
+NR_037916.1         ACAAAAATAGCTGGGCATGGTGGCGCATGCCTGTAGTCCCAGCTACTAGAGCGACTGAGG
+NR_125870.1         ------------------------------------------------------------
+NM_001284458.1      ------------------------------------------------------------
+                                                                                
+
+NR_037916.1         CAGGAGAATTGCTTGAACCTGGGAGGCGGAGGTTGCAGGGAGCCAAGATGGCGCCACCGC
+NR_125870.1         ------------------------------------------------------------
+NM_001284458.1      ------------------------------------------------------------
+                                                                                
+
+NR_037916.1         ACTCCAGCCTAGGTGATAGAGTGAGACTCCCTCTCAAAAACAAAACAAAACAAAAAAATT
+NR_125870.1         ------------------------------------------------------------
+NM_001284458.1      ------------------------------------------------------------
+                                                                                
+
+NR_037916.1         AGACAAATGCTACATTAATGTTTGGGTGGTCAGATTCTACTTTGAATCTGAAGTTTGCAG
+NR_125870.1         ------------------------------------------------------------
+NM_001284458.1      ------------------------------------------------------------
+                                                                                
+
+NR_037916.1         ATATGCCTATAGATTTTTGGAGTTTACCACTTTCTTATTCTGTATCATTAATGTAATATT
+NR_125870.1         ------------------------------------------------------------
+NM_001284458.1      ------------------------------------------------------------
+                                                                                
+
+NR_037916.1         TTAAATTACTATATATGTTACCATTTTTCTGGATTTAGTAAGAAATTTGCAGTTTTGGTT
+NR_125870.1         ------------------------------------------------------------
+NM_001284458.1      ------------------------------------------------------------
+                                                                                
+
+NR_037916.1         TGATGTAACAAGGGTTTTAATGTAATTTATGTTAGATTTTGCATTTTTTTCATTACTGTT
+NR_125870.1         ------------------------------------------------------------
+NM_001284458.1      ------------------------------------------------------------
+                                                                                
+
+NR_037916.1         ATATTTTAACCTGACTGACTGATCTAATTGTATTAGTATTGTGAATAATCATGTGAAATG
+NR_125870.1         ------------------------------------------------------------
+NM_001284458.1      ------------------------------------------------------------
+                                                                                
+
+NR_037916.1         TTTTGAGACAGAGTACTATATTTGTGAATATAATTTTATGGTTTTTTTCACTTAGAACCT
+NR_125870.1         ------------------------------------------------------------
+NM_001284458.1      ------------------------------------------------------------
+                                                                                
+
+NR_037916.1         TTCTGTGTGGAAAACTAAGAAAATTGCTTTCTGCTGTATAATCTGGCATTCATTGTAGAT
+NR_125870.1         ------------------------------------------------------------
+NM_001284458.1      ------------------------------------------------------------
+                                                                                
+
+NR_037916.1         TAAAGCTTATTTTTCTGTGAATAAAACGTATTCAATAAAATACTATTCTTTAAAATTATA
+NR_125870.1         ------------------------------------------------------------
+NM_001284458.1      ------------------------------------------------------------
+                                                                                
+
+NR_037916.1         TCATAAAAAAAAAA
+NR_125870.1         --------------
+NM_001284458.1      --------------
+                                  
