@@ -18,6 +18,7 @@ The goal of this research project is to use differentially expressed genes follo
 
 data_path = './data/BMI565_ResearchProject_Data/'
 
+import sys
 from matplotlib import pyplot as plt 
 import seaborn as sns 
 from Bio import Entrez, AlignIO 
@@ -122,21 +123,29 @@ class pathway:
         return count / max( len(seq1), len(seq2) ) # normalize by length of gene: want the longer of the two 
         
         
-    def get_edit_distances(self, gene): 
+    def get_edit_distances(self): 
         '''
         This funtion: 
             1. generates a fasta file for our 3 species of comparison 
-            2. combines the 3 
+            2. combines the 3 species sequences into a fasta file 
+            3. writes that fasta file to disk 
+            4. runs clustalw on the fasta file 
+            5. reads alignment into ram 
+            6. calculates edit distance
+            
         
         '''
         Entrez.email = 'evansna@ohsu.edu'
         
         species = ['homo sapiens', 'mus musculus', 'canis lupus familiaris'] 
         
+        fail = 0
         self.gene_edit_dist = {} 
+        tot = len(self.group)
         
-        for gene in self.group: 
-            print('calculating edit distances for:', gene)
+        for i,gene in enumerate(self.group): 
+            ppprint(gene, fail, i, tot, 'entrez gene retrieval')
+            #print('calculating edit distances for:', gene)
             
             # write fasta file to disk for comparison 
             human_fasta = self.get_gene_seq(gene, species[0])
@@ -145,7 +154,7 @@ class pathway:
             fasta = [human_fasta, mouse_fasta, dog_fasta]
             
             if (None not in fasta): 
-            
+                ppprint(gene, fail, i, tot, 'clustalW align')
                 full_fasta = '\n'.join(fasta)
     
                 with open('./temp/unaligned.fasta', 'w') as f: 
@@ -168,16 +177,17 @@ class pathway:
                 #print(align[2]) # human
                 
                 # calculate edit distance # save human-mouse e-dist, human-canis e-dist 
-                
+                ppprint(gene, fail, i, tot, 'calc edit dist')
                 self.gene_edit_dist[gene] = {'human-mouse' : self.calculate_edit_distance(align[2], align[0]), 'human-dog' : self.calculate_edit_distance(align[1], align[2])}
             
             else: 
-                print('failed to process: %s' % gene)
+                fail+=1 
+                #print('failed to process: %s' % gene)
         
-            with open('./data/edit_dists.pkl', 'wb') as f: 
+            with open('./data/edit_dists-test.pkl', 'wb') as f: 
                 pickle.dump(self.gene_edit_dist, f)
-                
-        print('Finished calculating edit distances')
+         
+        print('\nFinished calculating edit distances. Failures: %s' %fail)
             
             
     def plot_conservation(self, species, recalc = False, ax=None):
@@ -198,7 +208,7 @@ class pathway:
                 self.gene_edit_dist = pickle.load(f)
                 
         else: 
-            self.get_edit_distances(self.group)
+            self.get_edit_distances()
             
         DE_conserved = list(map(lambda x: self.gene_edit_dist[x][species], set(self.gene_edit_dist.keys()).intersection(self.DE_genes)))
         
@@ -228,6 +238,17 @@ class entrez_search_failure(Exception):
     def __str__(self): 
         return 'the entrez gene search failed to return a valid response' 
 
-def __print(msg, failures, status): 
-    print('\rSTATUS: %s \t MSG: %s \t Failures: %s' %(status, msg, failures))
+def ppprint(gene, fail, num, tot, msg): 
+    '''
+    prints a status msg to console over itself for cleaner presentation. 
+    
+    inputs 
+        None
+        
+    Outputs 
+        None 
+    '''
+    sys.stdout.write("Progress: %d/%d [failures: %d] \t Gene: %s \t ...%s   \r" % (num, tot, fail, gene, msg) )
+    sys.stdout.flush()
+    
     

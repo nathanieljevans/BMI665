@@ -25,7 +25,7 @@ if __name__ == '__main__' :
     fig, (ax1, ax2) = plt.subplots(nrows=1, ncols=2, figsize=(11,9))
     plt.suptitle('Conservation of differentially expressed genes vs non-differentially expressed')
     
-    tep.plot_conservation(species = 'human-mouse', recalc=False, ax=ax1)
+    tep.plot_conservation(species = 'human-mouse', recalc=True, ax=ax1)
 
     tep.plot_conservation(species = 'human-dog', recalc=False, ax=ax2)
     
